@@ -68,4 +68,9 @@ const testUserData = [
       33,
       10
     ]
-  };
+  }
+];
+
+if (typeof module !== 'undefined') {
+  module.exports = testUserData;
+}
