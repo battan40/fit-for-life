@@ -40,4 +40,32 @@ const userTestingData = [
       33
     ]
   },
-  
+  {
+    "id": 4,
+    "name": "Laksmi Devi",
+    "address": "887755 Milky Ocean Drive, Turnermouth OR 23720-3230",
+    "email": "MotherOfTheWorld_Pollich@hotmail.com",
+    "strideLength": 3.1,
+    "dailyStepGoal": 4000,
+    "friends": [
+      48,
+      7,
+      44,
+      8
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Diana Hunt",
+    "address": "3399 Forest Wilds Walk, Jordaneside WA 55023-6523",
+    "email": "Huntress_ofTheFold@gmail.com",
+    "strideLength": 3.1,
+    "dailyStepGoal": 8000,
+    "friends": [
+      13,
+      44,
+      49,
+      33,
+      10
+    ]
+  },
