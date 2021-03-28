@@ -7,9 +7,11 @@ class User {
     this.strideLength = strideLength;
     this.dailyStepGoal = dailyStepGoal;
   }
-
+  returnFirstName(){
+    return this.name.split(' ')[0];
+  }
 };
 
 if (typeof module !== 'undefined') {
   module.exports = User;
-}
+};
