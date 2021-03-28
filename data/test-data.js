@@ -70,29 +70,98 @@ const testUserData = [
     ]
   };
 
-  const testHydrationData = [
-    {
-      "userID": 1,
-      "date": "2019/06/15",
-      "numOunces": 37
-    },
-    {
-      "userID": 2,
-      "date": "2019/06/15",
-      "numOunces": 75
-    },
-    {
-      "userID": 3,
-      "date": "2019/06/15",
-      "numOunces": 47
-    },
-    {
-      "userID": 4,
-      "date": "2019/06/15",
-      "numOunces": 85
-    },
-    {
-      "userID": 5,
-      "date": "2019/06/15",
-      "numOunces": 42
-    };
+const testHydrationData = [
+  {
+    "userID": 1,
+    "date": "2019/06/15",
+    "numOunces": 37
+  },
+  {
+    "userID": 2,
+    "date": "2019/06/15",
+   "numOunces": 75
+  },
+  {
+    "userID": 3,
+    "date": "2019/06/15",
+    "numOunces": 47
+  },
+  {
+    "userID": 4,
+    "date": "2019/06/15",
+    "numOunces": 85
+  },
+  {
+    "userID": 5,
+    "date": "2019/06/15",
+    "numOunces": 42
+  };
+
+const sleepData = [
+  {
+    "userID": 1,
+    "date": "2019/06/15",
+    "hoursSlept": 6.1,
+    "sleepQuality": 2.2
+  },
+  {
+    "userID": 2,
+    "date": "2019/06/15",
+    "hoursSlept": 7,
+    "sleepQuality": 4.7
+  },
+  {
+    "userID": 3,
+    "date": "2019/06/15",
+    "hoursSlept": 10.8,
+    "sleepQuality": 4.7
+  },
+  {
+    "userID": 4,
+    "date": "2019/06/15",
+    "hoursSlept": 5.4,
+    "sleepQuality": 3
+  },
+  {
+    "userID": 5,
+    "date": "2019/06/15",
+    "hoursSlept": 4.1,
+    "sleepQuality": 3.6
+  };
+
+const activityData = [
+  {
+    "userID": 1,
+    "date": "2019/06/15",
+    "numSteps": 3577,
+    "minutesActive": 140,
+    "flightsOfStairs": 16
+  },
+  {
+    "userID": 2,
+    "date": "2019/06/15",
+    "numSteps": 4294,
+    "minutesActive": 138,
+    "flightsOfStairs": 10
+  },
+  {
+    "userID": 3,
+    "date": "2019/06/15",
+    "numSteps": 7402,
+    "minutesActive": 116,
+    "flightsOfStairs": 33
+  },
+  {
+    "userID": 4,
+    "date": "2019/06/15",
+    "numSteps": 3486,
+    "minutesActive": 114,
+    "flightsOfStairs": 32
+  },
+  {
+    "userID": 5,
+    "date": "2019/06/15",
+    "numSteps": 11374,
+    "minutesActive": 213,
+    "flightsOfStairs": 13
+  };
