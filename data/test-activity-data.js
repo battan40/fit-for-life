@@ -33,4 +33,4 @@ const testActivityData = [
     "numSteps": 11374,
     "minutesActive": 213,
     "flightsOfStairs": 13
-  },
+  };
