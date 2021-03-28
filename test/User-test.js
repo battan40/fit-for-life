@@ -20,4 +20,8 @@ describe ('User', () => {
     expect(user1).to.be.an.instanceof(User);
   });
 
+  it('should return the value of the users first name only', () => {
+    expect(user1.returnFirstName()).to.equal('Lilith')
+  });
+
 });
