@@ -16,4 +16,12 @@ describe ('Activity', () => {
     activity = new Activity(testActivityData, user1);
   });
 
+  it('should be a function', () => {
+    expect(Activity).to.be.a('function');
+  });
+
+  it('should instantiate an Activity', () => {
+    expect(activity).to.be.an.instanceof(Activity);
+  });
+
 });
