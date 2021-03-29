@@ -3,28 +3,31 @@
   <head>
     <meta charset="UTF-8">
     <title>Activity Tracker</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <section>
-      <article>
+    <section class="top-container">
+      <article class="top-article">
         <h1>FitLit</h1>
         <h2 class="user-name" placeholder="user-name">user name</h2>
         <h2 class="viewing-rings" placeholder="viewing: day">viewing: day</h2>
-        <svg></svg>
-        <h3 class="sleep" placeholder="sleep">sleep</h3>
-        <h3 class="hydration" placeholder="hydration">hydration</h3>
-        <h3 class="steps" placeholder="steps">steps</h3>
+        <svg class="user-stats"></svg>
+          <h3 class="sleep" placeholder="sleep">sleep</h3>
+          <h3 class="hydration" placeholder="hydration">hydration</h3>
+          <h3 class="steps" placeholder="steps">steps</h3>
       </article>
     </section>
-    <section>
+    <section class="middle-container">
       <div class="friend-1">friend 1</div>
       <div class="friend-2">friend 2</div>
       <div class="friend-3">friend 3</div>
     </section>
-    <section>
-      <article>
-        <div class="graph-container"></div>
-        <h2 class="viewing-graph">
+    <section class="bottom-container">
+      <article class="bottom-article">
+        <div class="graph-container">
+          <svg class="user-graph"></svg>
+        </div>
+        <h2 class="viewing-graph">Graph<h2>
       </article>
     </section>
     <script type="text/javascript" src="../data/users.js"></script>
