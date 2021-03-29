@@ -35,3 +35,7 @@ const testActivityData = [
     "flightsOfStairs": 13
   }
 ];
+
+if (typeof module !== 'undefined') {
+  module.exports = testActivityData;
+};
