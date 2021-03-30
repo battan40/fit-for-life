@@ -1,15 +1,14 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const Repository = require('../src/RepositoryClass')
+const UserRepo = require('../src/UserRepoClass')
 const testUserData = require('../data/test-user-data.js');
-const userRepoData = userRepositoryData.repositoryData;
 
 describe ('User Repository', () => {
   let userRepo;
 
   beforeEach(() => {
-    activity = new UserRepo(testUserData);
+    userRepo = new UserRepo(testUserData);
   });
 
   it('should be a function', () => {
@@ -17,6 +16,22 @@ describe ('User Repository', () => {
   });
 
   it('should instantiate an Activity', () => {
-    expect(activity).to.be.an.instanceof(UserRepo);
+    expect(userRepo).to.be.an.instanceof(UserRepo);
   });
+
+  it('should all user information', () => {
+    expect(userRepo.data.length).to.deep.equal(5);
+  });
+
+  it('should find that the info stored in user repo is the same info as the user data', () => {
+    expect(userRepo.data).to.deep.equal(testUserData);
+  });
+
+  it('should be able to return a users info by finding their id', () => {
+    expect(userRepo.returnUsersData(1)).to.deep.equal(testUserData[0]);
+  });
+
+  it('should return the average total steps of all the users', () => {
+   expect(userRepo.returnAllUsersStepGoal()).to.deep.equal(6833)
+ });
 });
