@@ -23,5 +23,7 @@ describe ('User Repository', () => {
     expect(userRepo.data.length).to.deep.equal(5);
   });
 
-  
+  it('should find that the info stored in user repo is the same info as the user data', () => {
+    expect(userRepo.data).to.deep.equal(testUserData);
+  });
 });
