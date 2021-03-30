@@ -26,4 +26,12 @@ describe ('User Repository', () => {
   it('should find that the info stored in user repo is the same info as the user data', () => {
     expect(userRepo.data).to.deep.equal(testUserData);
   });
+
+  it('should be able to return a users info by finding their id', () => {
+    expect(userRepo.returnUsersData(1)).to.deep.equal(testUserData[0]);
+  });
+
+  it('should return the average total steps of all the users', () => {
+   expect(userRepo.returnAllUsersStepGoal()).to.deep.equal(6833)
+ });
 });
