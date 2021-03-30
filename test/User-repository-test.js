@@ -1,15 +1,14 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const Repository = require('../src/RepositoryClass')
+const UserRepo = require('../src/UserRepoClass')
 const testUserData = require('../data/test-user-data.js');
-const userRepoData = userRepositoryData.repositoryData;
 
 describe ('User Repository', () => {
   let userRepo;
 
   beforeEach(() => {
-    activity = new UserRepo(testUserData);
+    userRepo = new UserRepo(testUserData);
   });
 
   it('should be a function', () => {
@@ -17,6 +16,12 @@ describe ('User Repository', () => {
   });
 
   it('should instantiate an Activity', () => {
-    expect(activity).to.be.an.instanceof(UserRepo);
+    expect(userRepo).to.be.an.instanceof(UserRepo);
   });
+
+  it('should all user information', () => {
+    expect(userRepo.data.length).to.deep.equal(5);
+  });
+
+  
 });
