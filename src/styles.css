@@ -10,11 +10,17 @@
   border: 2px black solid;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ******** top container ******** */
 .top-container {
   border: 2px #EF3B82 solid;
   display: flex;
   justify-content: center;
+  flex-grow: 3;
 }
 
 .top-article {
@@ -22,11 +28,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: inherit;
+}
+
+.user-info {
+  display: flex;
 }
 
 .user-stats {
   border: 2px #34E4C7 solid;
-
 }
 
 .sleep {
@@ -39,6 +49,7 @@
   border: 2px #EF3B82 solid;
   display: flex;
   justify-content: center;
+  flex-grow: 1;
 }
 
 
@@ -48,6 +59,7 @@
   border: 2px #EF3B82 solid;
   display: flex;
   justify-content: center;
+  flex-grow: 1;
 }
 
 .bottom-article {
@@ -55,6 +67,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
+  flex-grow: inherit;
 }
 
 .user-graph {
