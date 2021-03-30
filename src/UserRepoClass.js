@@ -3,6 +3,10 @@ class UserRepo {
     this.data = userData;
   }
 
+  returnUsersData(specificId) {
+    return this.data.find(user => user.id === specificId);
+  }
+  
 };
 
 if (typeof module !== 'undefined') {
