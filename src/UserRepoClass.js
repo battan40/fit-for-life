@@ -13,7 +13,6 @@ class UserRepo {
      return totalSteps;
    }, 6833)
  }
-
 };
 
 if (typeof module !== 'undefined') {
