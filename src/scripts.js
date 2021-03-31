@@ -28,12 +28,12 @@ function getFriends() {
 
 function displayUserAverageSteps() {
   const userStepGoal = document.querySelector('#userStepGoal');
-  userStepGoal.innerText = currentUser.dailyStepGoal;
+  userStepGoal.innerText = `User's Daily Step Average ${currentUser.dailyStepGoal}`;
 };
 
 function displayAllAverageSteps() {
   const allUsersStepsGoals = document.querySelector('#allUsersStepsGoals');
-  allUsersStepsGoals.innerText = allUsers.returnAllUsersStepGoal();
+  allUsersStepsGoals.innerText = `User's Step Goal Average: ${allUsers.returnAllUsersStepGoal()}`;
 };
 
 function getRandomIndex(array) {
