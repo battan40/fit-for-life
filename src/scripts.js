@@ -1,4 +1,5 @@
 let currentUser;
+let allUsers = new UserRepo(userData);
 const displayUser = document.querySelector('#displayUser');
 const userStepGoal = document.querySelector('#stepGoal');
 const friendsContainer = document.querySelector('#friendContainer');
@@ -7,7 +8,7 @@ window.addEventListener('load', getRandomUser);
 window.addEventListener('load', getFriends);
 
 function getRandomUser() {
-  currentUser = new User(userData[getRandomIndex(userData)]);
+  currentUser = new User(allUsers.returnUsersData(getRandomIndex(userData)));
   displayUser.innerText = currentUser.name;
   userStepGoal.innerText = ` Step Goal: ${currentUser.dailyStepGoal}`;
 };
@@ -24,12 +25,12 @@ function getFriends() {
 };
 
 function displayUserAverageSteps() {
-  const
+  
 };
 
-// function displayAllAverageSteps() {
-//
-// };
+function displayAllAverageSteps() {
+
+};
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
