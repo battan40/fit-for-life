@@ -20,6 +20,18 @@ describe ('User', () => {
     expect(user1).to.be.an.instanceof(User);
   });
 
+  it('should have an id', () => {
+    expect(user1.id).to.equal(1);
+  });
+
+  it('should expect user id to align with each different user', () => {
+    expect(user2.id).to.equal(2);
+  });
+
+  it('should have a name', () => {
+    expect(user1.name).to.equal("Lilith Black Moon");
+  });
+
   it('should return the value of the users first name only', () => {
     expect(user1.returnFirstName()).to.equal('Lilith')
   });
