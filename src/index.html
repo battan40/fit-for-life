@@ -11,31 +11,29 @@
         <article class="top-article">
           <h1 class="title">FitLit</h1>
           <div class="user-info">
-            <h2 class="user-name" placeholder="user-name">user name</h2>
-            <h2 class="viewing-rings" placeholder="viewing: day">viewing: day</h2>
+            <h2 class="user-name" id="displayUser" placeholder="user-name">user name</h2>
+            <h2 class="step-goal" id="stepGoal" placeholder="step goal">step goal</h2>
           </div>
           <svg class="user-stats"></svg>
           <div class="stats-container">
             <h3 class="sleep" placeholder="sleep">sleep</h3>
             <h3 class="hydration" placeholder="hydration">hydration</h3>
             <h3 class="steps" placeholder="steps">steps</h3>
-          </div>  
+          </div>
         </article>
       </section>
-      <section class="middle-container">
-        <div class="friend-1">friend 1</div>
-        <div class="friend-2">friend 2</div>
-        <div class="friend-3">friend 3</div>
+      <section class="friend-container" id="friendContainer">
       </section>
       <section class="bottom-container">
         <article class="bottom-article">
           <div class="graph-container">
             <svg class="user-graph"></svg>
           </div>
-          <h2 class="viewing-graph">Graph<h2>
+          <h2 class="user-step-goal">Average Step Goal<h2>
         </article>
       </section>
     </main>
+    <script type="text/javascript" src="../src/UserClass.js"></script>
     <script type="text/javascript" src="../data/users.js"></script>
     <script type="text/javascript" src="../data/hydration.js"></script>
     <script type="text/javascript" src="../data/sleep.js"></script>
