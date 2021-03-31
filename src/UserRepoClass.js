@@ -8,10 +8,10 @@ class UserRepo {
   }
 
   returnAllUsersStepGoal() {
-   return this.data.reduce((totalSteps, user) => {
-     totalSteps + (user.dailyStepGoal / this.data.length);
-     return totalSteps;
-   }, 6833)
+    const allUserSteps = this.data.reduce((totalSteps, user) => {
+      return totalSteps + user.dailyStepGoal;
+   }, 0)
+      return allUserSteps/this.data.length; 
  }
 };
 
