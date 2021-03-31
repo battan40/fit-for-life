@@ -6,6 +6,8 @@ const friendsContainer = document.querySelector('#friendContainer');
 
 window.addEventListener('load', getRandomUser);
 window.addEventListener('load', getFriends);
+window.addEventListener('load', displayAllAverageSteps);
+window.addEventListener('load', displayUserAverageSteps);
 
 function getRandomUser() {
   currentUser = new User(allUsers.returnUsersData(getRandomIndex(userData)));
@@ -25,17 +27,15 @@ function getFriends() {
 };
 
 function displayUserAverageSteps() {
-  
+  const userStepGoal = document.querySelector('#userStepGoal');
+  userStepGoal.innerText = currentUser.dailyStepGoal;
 };
 
 function displayAllAverageSteps() {
-
+  const allUsersStepsGoals = document.querySelector('#allUsersStepsGoals');
+  allUsersStepsGoals.innerText = allUsers.returnAllUsersStepGoal();
 };
 
 function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
+  return Math.floor(Math.random() * array.length) + 1;
 };
-
-//with the string welcome
-//display their randomuser.stepgoal next to all the users step goal...
-//part of the average
