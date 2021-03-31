@@ -8,9 +8,26 @@ class User {
     this.dailyStepGoal = dailyStepGoal;
     this.friends = friends;
   }
+
   returnFirstName(){
     return this.name.split(' ')[0];
   }
+
+  allTimeFlOz() {
+    const userHydrationData = hydrationData.filter(user =>
+    user.id === this.id)
+    console.log(userHydrationData, '<<<<userHydrationData')
+    // const userAllTimeFlOz = userHydrationData.reduce(numOunces =>
+    // )
+
+  }
+
+  // const allUserSteps = this.data.reduce((totalSteps, user) => {
+  //   return totalSteps + user.dailyStepGoal;
+  // }, 0)
+  //   return allUserSteps/this.data.length;
+
+
 };
 
 if (typeof module !== 'undefined') {
