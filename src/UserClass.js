@@ -13,22 +13,6 @@ class User {
     return this.name.split(' ')[0];
   }
 
-  allTimeFlOz() {
-    const userHydrationData = hydrationData.filter(user =>
-    user.id === this.id)
-    console.log(userHydrationData, '<<<<userHydrationData')
-    const reducer = (acc, currentVal) => acc + currentVal;
-    const userAllTimeFlOz = userHydrationData.reduce(reducer)
-    console.log(userAllTimeFlOz)
-
-  }
-
-  // const allUserSteps = this.data.reduce((totalSteps, user) => {
-  //   return totalSteps + user.dailyStepGoal;
-  // }, 0)
-  //   return allUserSteps/this.data.length;
-
-
 };
 
 if (typeof module !== 'undefined') {
