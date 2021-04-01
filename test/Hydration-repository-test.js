@@ -10,4 +10,8 @@ describe ('HydrationRepo', () => {
     hydrationRepo = new HydrationRepo(testHydrationData);
   });
 
+  it('should be a funciton', () => {
+    expect(Hydration).to.be.a('funciton');
+  });
+
 });
