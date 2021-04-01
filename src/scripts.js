@@ -4,10 +4,13 @@ const displayUser = document.querySelector('#displayUser');
 const userStepGoal = document.querySelector('#stepGoal');
 const friendsContainer = document.querySelector('#friendContainer');
 
-window.addEventListener('load', getRandomUser);
-window.addEventListener('load', getFriends);
-window.addEventListener('load', displayAllAverageSteps);
-window.addEventListener('load', displayUserAverageSteps);
+window.addEventListener('load', onPageLoad);
+
+function onPageLoad() {
+  getRandomUser();
+  displayAllAverageSteps();
+  displayUserAverageSteps();
+}
 
 function getRandomUser() {
   currentUser = new User(allUsers.returnUsersData(getRandomIndex(userData)));
