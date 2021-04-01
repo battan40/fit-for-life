@@ -23,10 +23,14 @@ describe ('Hydration', () => {
     expect(hydration.findUserById(2)).to.deep.equal([testHydrationData[1], testHydrationData[6]]);
   });
 
-  it('should recall number of Fluid Ounces drank', function() {
+  it('should recall average of all time Fluid Ounces drank', function() {
     expect(hydration.calculateHydrationAllTime).to.be.a('function');
     expect(hydration.calculateHydrationAllTime(1)).to.equal(53);
     expect(hydration.calculateHydrationAllTime(2)).to.equal(83);
+  })
+
+  it('should have method to recall fluid ounces drank from single date given', function() {
+    expect(hydration.singleDayHydration).to.be.a('function');
   })
 
 });

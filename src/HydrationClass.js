@@ -22,7 +22,9 @@ class Hydration {
       return allOuncesDrank / userHydrationData.length;
   };
 
-  singleDayHydration() {}
+  singleDayHydration(date) {
+
+  }
 
 };
 
