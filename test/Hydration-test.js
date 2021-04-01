@@ -22,7 +22,7 @@ describe ('Hydration', () => {
   });
 
   it('should be able to locate a single user by their unique id', () => {
-    expect(hydration1.findUserById(id)).to.deep.equal(hydration1.hydrationData.userID)
+    expect(hydration1.findUserById(1)).to.deep.equal(hydration1.hydrationData.userID)
   });
 
 
