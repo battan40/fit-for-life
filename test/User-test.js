@@ -22,6 +22,11 @@ describe ('User', () => {
 
   it('should return the value of the users first name only', () => {
     expect(user1.returnFirstName()).to.equal('Lilith');
+    expect(user2.returnFirstName()).to.equal('Inanna');
   });
+
+  // it('should return the value for floz drank per day for all time', function () {
+  //   expect(user1.allTimeFlOz()).to.be.a('function');
+  // })
 
 });

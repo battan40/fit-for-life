@@ -23,4 +23,9 @@ const testHydrationData = [
     "userID": 5,
     "date": "2019/06/15",
     "numOunces": 42
-  };
+  }
+]
+
+if (typeof module !== 'undefined') {
+  module.exports = testHydrationData;
+}
