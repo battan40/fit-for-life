@@ -36,8 +36,9 @@ describe ('Hydration', () => {
   it('should recall fluid ounces drank from single date given', function() {
     expect(hydration.singleDayHydration(1, "2019/06/15")).to.equal(37);
     expect(hydration.singleDayHydration(1, "2019/06/16")).to.equal(69);
-
     expect(hydration.singleDayHydration(2, "2019/06/15")).to.equal(75);
+    expect(hydration.singleDayHydration(2, "2019/06/16")).to.equal(91);
+
 
   })
 
