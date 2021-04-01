@@ -21,6 +21,9 @@ class Hydration {
     // console.log(allOuncesDrank)
       return allOuncesDrank / userHydrationData.length;
   };
+
+  singleDayHydration() {}
+
 };
 
 if (typeof module !== 'undefined') {
