@@ -33,4 +33,8 @@ describe ('Hydration', () => {
     expect(hydration.singleDayHydration).to.be.a('function');
   })
 
+  it('should recall fluid ounces drank from single date given', function() {
+    expect(hydration.singleDayHydration("2019/06/15")).to.equal(37);
+  })
+
 });
