@@ -5,9 +5,10 @@ class Hydration {
 
   findUserById(userID) {
      let uniqueUserData = this.hydrationData.filter(user => {
+       // let uniqueUser = {userID: user.userID, date: user.date, numOunces: user.numOunces}
       return user.userID === userID;
     });
-    // console.log(uniqueUserData, 'unique user data')
+    console.log(uniqueUserData)
     return uniqueUserData
   };
 

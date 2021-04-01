@@ -8,7 +8,7 @@ describe ('Hydration', () => {
   let hydration
   beforeEach(() => {
     hydration = new Hydration(testHydrationData);
-    console.log(hydration.findUserById(1),'<<method', testHydrationData[0], '<<<<<compare')
+    // console.log(hydration.findUserById(1),'<<method', testHydrationData[0], '<<<<<compare')
   });
 
   it('should be a function', () => {
@@ -20,7 +20,7 @@ describe ('Hydration', () => {
   });
 
   it('should be able to locate a single user by their unique id', () => {
-    expect(hydration.findUserById(1)).to.deep.equal(testHydrationData[0])
+    expect(hydration.findUserById(1)).to.deep.equal([testHydrationData[0]])
   });
 
 
