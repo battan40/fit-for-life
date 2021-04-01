@@ -5,7 +5,7 @@ const Hydration = require('../src/HydrationClass');
 const testHydrationData = require('../data/test-hydration-data.js');
 
 describe ('Hydration', () => {
-  let hydration
+  let hydration;
   beforeEach(() => {
     hydration = new Hydration(testHydrationData);
   });
