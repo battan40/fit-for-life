@@ -8,7 +8,6 @@ describe ('Hydration', () => {
   let hydration
   beforeEach(() => {
     hydration = new Hydration(testHydrationData);
-    // console.log(hydration.findUserById(1),'<<method', testHydrationData[0], '<<<<<compare')
   });
 
   it('should be a function', () => {
@@ -20,12 +19,13 @@ describe ('Hydration', () => {
   });
 
   it('should be able to locate a single user by their unique id', () => {
-    expect(hydration.findUserById(1)).to.deep.equal([testHydrationData[0]])
+    expect(hydration.findUserById(1)).to.deep.equal([testHydrationData[0]]);
+    expect(hydration.findUserById(2)).to.deep.equal([testHydrationData[1]]);
   });
 
-
-  // it('should recall number of Fluid Ounces drank', function() {
-  //   expect(hydration1.numOunces).to.equal(37);
-  //   expect(hydration2.numOunces).to.equal(75);
-  // })
+  it('should recall number of Fluid Ounces drank', function() {
+    expect(hydration.calculateHydrationAllTime).to.be.a('function');
+    expect(hydration.calculateHydrationAllTime(1)).to.equal(37);
+    expect(hydration.calculateHydrationAllTime(2)).to.equal(75);
+  })
 });
