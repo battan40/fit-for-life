@@ -17,8 +17,9 @@ class User {
     const userHydrationData = hydrationData.filter(user =>
     user.id === this.id)
     console.log(userHydrationData, '<<<<userHydrationData')
-    // const userAllTimeFlOz = userHydrationData.reduce(numOunces =>
-    // )
+    const reducer = (acc, currentVal) => acc + currentVal;
+    const userAllTimeFlOz = userHydrationData.reduce(reducer)
+    console.log(userAllTimeFlOz)
 
   }
 
