@@ -8,7 +8,7 @@ describe ('Hydration', () => {
   let hydration
   beforeEach(() => {
     hydration = new Hydration(testHydrationData);
-    // console.log(hydration.findUserById(1), "<<<<")
+    console.log(hydration.findUserById(1),'<<method', testHydrationData[0], '<<<<<compare')
   });
 
   it('should be a function', () => {
