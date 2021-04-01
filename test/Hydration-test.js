@@ -19,13 +19,14 @@ describe ('Hydration', () => {
   });
 
   it('should be able to locate a single user by their unique id', () => {
-    expect(hydration.findUserById(1)).to.deep.equal([testHydrationData[0]]);
-    expect(hydration.findUserById(2)).to.deep.equal([testHydrationData[1]]);
+    expect(hydration.findUserById(1)).to.deep.equal([testHydrationData[0], testHydrationData[5]]);
+    expect(hydration.findUserById(2)).to.deep.equal([testHydrationData[1], testHydrationData[6]]);
   });
 
   it('should recall number of Fluid Ounces drank', function() {
     expect(hydration.calculateHydrationAllTime).to.be.a('function');
-    expect(hydration.calculateHydrationAllTime(1)).to.equal(37);
-    expect(hydration.calculateHydrationAllTime(2)).to.equal(75);
+    expect(hydration.calculateHydrationAllTime(1)).to.equal(53);
+    expect(hydration.calculateHydrationAllTime(2)).to.equal(83);
   })
+
 });
