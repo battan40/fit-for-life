@@ -19,7 +19,6 @@ class Hydration {
     const allOuncesDrank = userHydrationData.reduce((beginningOunces, drinker) => {
       return beginningOunces + drinker.numOunces;
     }, 0);
-    console.log(allOuncesDrank, userHydrationData.length, userHydrationData)
       return allOuncesDrank / userHydrationData.length;
   }
 
@@ -38,8 +37,10 @@ class Hydration {
       return oneUser.numOunces;
     });
 
-    // const filter
-
+    const startingDate = userHydrationData.findIndex(data => data.date === specificDate)
+    const wholeWeek = userHydrationData.slice(startingDate - 6, startingDate + 1)
+    const ouncesForWeek = wholeWeek.map(day => day.numOunces);
+    return ouncesForWeek;
   }
 
 };

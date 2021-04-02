@@ -40,4 +40,14 @@ describe ('Hydration', () => {
     expect(hydration.singleDayHydration(2, "2019/06/16")).to.equal(91);
   })
 
+  it('should have method to recall a weeks fluid oz drank', function() {
+    expect(hydration.calculateWeeksHydration).to.be.a('function');
+  })
+
+  it('should recall a weeks fluid oz drank', function() {
+    expect(hydration.calculateWeeksHydration(1, "2019/06/22")).to.deep.equal([ 69, 96, 61, 91, 50, 50, 43 ]);
+    expect(hydration.calculateWeeksHydration(2, "2019/06/22")).to.deep.equal([ 91, 96, 70, 76, 71, 27, 58 ]);
+
+  })
+
 });
