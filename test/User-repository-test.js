@@ -19,7 +19,7 @@ describe ('User Repository', () => {
     expect(userRepo).to.be.an.instanceof(UserRepo);
   });
 
-  it('should all user information', () => {
+  it('should hold all user information', () => {
     expect(userRepo.data.length).to.deep.equal(5);
   });
 
