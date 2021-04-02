@@ -16,7 +16,7 @@ describe ('Hydration', () => {
     userRepo = new UserRepo(testUserData);
     user = new User(userRepo.returnUsersData(1))
   });
-
+  
   it('should be a function', () => {
     expect(Hydration).to.be.a('function');
   });
