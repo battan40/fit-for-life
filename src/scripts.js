@@ -11,7 +11,8 @@ function onPageLoad() {
   getRandomUser();
   displayAllAverageSteps();
   displayUserAverageSteps();
-}
+  displayDailyWaterIntake();
+};
 
 function getRandomUser() {
   currentUser = new User(allUsers.returnUsersData(getRandomIndex(userData)));
