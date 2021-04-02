@@ -31,6 +31,10 @@ describe ('HydrationRepo', () => {
     expect(hydration.findUserById(1)).to.deep.equal(testRepoData[0]);
     });
 
+  it('should return the average total ounces water drank of all the users', () => {
+    expect(hydrationRepo.returnAverageAllHydration()).to.equal(0);
+    });
+
   });
 
 });
