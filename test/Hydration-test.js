@@ -16,7 +16,7 @@ describe ('Hydration', () => {
     userRepo = new UserRepo(testUserData);
     user = new User(userRepo.returnUsersData(1))
   });
-  
+
   it('should be a function', () => {
     expect(Hydration).to.be.a('function');
   });
@@ -25,11 +25,18 @@ describe ('Hydration', () => {
     expect(hydration).to.be.an.instanceOf(Hydration);
   });
 
-  it('should be able to locate a single users data by their unique id', () => {
-    expect(hydration.findUserById(1)).to.deep.equal([testHydrationData[0], testHydrationData[5], testHydrationData[10], testHydrationData[15], testHydrationData[20], testHydrationData[25], testHydrationData[30], testHydrationData[35]]);
-    expect(hydration.findUserById(2)).to.deep.equal([testHydrationData[1], testHydrationData[6], testHydrationData[11], testHydrationData[16], testHydrationData[21], testHydrationData[26], testHydrationData[31], testHydrationData[36]]);
+  it('should be able to locate a single user by their unique id', () => {
+    console.log("user", hydration.findUserById(user.id))
+    expect(hydration.findUserById(user.id)).to.deep.equal( [
+      { userID: 1, date: '2019/06/15', numOunces: 37 },
+      { userID: 1, date: '2019/06/16', numOunces: 75 },
+      { userID: 1, date: '2019/06/17', numOunces: 47 },
+      { userID: 1, date: '2019/06/18', numOunces: 85 },
+      { userID: 1, date: '2019/06/19', numOunces: 42 },
+      { userID: 1, date: '2019/06/20', numOunces: 87 },
+      { userID: 1, date: '2019/06/21', numOunces: 94 }
+    ]);
   });
-
 
   it('should recall average of all time Fluid Ounces drank', function() {
     expect(hydration.calculateHydrationAllTime).to.be.a('function');

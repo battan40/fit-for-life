@@ -3,13 +3,11 @@ class Hydration {
     this.hydrationData = hydrationData
   }
 
-  findUserById(userID) {
-     let uniqueUserData = this.hydrationData.filter(user => {
-      return user.userID === userID;
-    });
-
-    return uniqueUserData;
-  }
+  findUserById(userId) {
+  return this.hydrationData.filter(user => {
+  return  user.userID === userId
+  })
+};
 
   calculateHydrationAllTime(userID) {
     const userHydrationData = this.findUserById(userID).filter(oneUser => {
