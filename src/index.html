@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"name="viewport" content="width=device-width, initial-scale=1">
     <title>Activity Tracker</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
@@ -25,20 +25,25 @@
       <section class="friend-container" id="friendContainer">
       </section>
       <section class="bottom-container">
-        <article class="bottom-article">
-          <div class="graph-container">
+        <section class="step-section">
+          <article class="graph-container">
             <svg class="user-graph"></svg>
-          </div>
+          </article>
           <h2 class="all-user-step-goal" id="allUsersStepsGoals"></h2>
           <h2 class="user-step-goal" id="userStepGoal">Average Step Goal<h2>
-        </article>
+        </section>
+        <section class="hydration-section">
+          <article class="water-graph-container">
+            <svg class="user-graph"></svg>
+          </article>
+          <h2 class="user-ounces-goal" id="userHydrationGoal">Todays Water Consumption<h2>
+          <h2 class="user-weekly-hydration hidden" id="userWeeklyHydration">Weekly Water</h2>
+        </section>
       </section>
     </main>
-    <script type="text/javascript" src="../node_modules/dayjs/dayjs.min.js"></script>
-    <script>
-    dayjs().format()
-    </script>
+    <script type="text/javascript" src="../src/moment.js"></script>
     <script type="text/javascript" src="../src/UserRepoClass.js"></script>
+    <script type="text/javascript" src="../src/HydrationClass.js"></script>
     <script type="text/javascript" src="../src/UserClass.js"></script>
     <script type="text/javascript" src="../data/users.js"></script>
     <script type="text/javascript" src="../data/hydration.js"></script>
