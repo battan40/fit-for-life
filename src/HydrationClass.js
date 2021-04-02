@@ -1,31 +1,28 @@
 class Hydration {
   constructor(hydrationData) {
     this.hydrationData = hydrationData
+
   }
 
   findUserById(userId) {
-  return this.hydrationData.filter(user => {
-  return  user.userID === userId
-  })
-};
+    return this.hydrationData.filter(user => {
+    return  user.userID === userId
+    })
+  };
 
-calculateHydrationAllTime(userID) {
-  const userHydrationData = this.findUserById(userID);
-  const allOuncesDrank = userHydrationData.reduce((beginningOunces, drinker) => {
-    return beginningOunces + drinker.numOunces;
-  }, 0);
-    return allOuncesDrank / userHydrationData.length;
-};
+  calculateHydrationAllTime(userID) {
+    const userHydrationData = this.findUserById(userID);
+    const allOuncesDrank = userHydrationData.reduce((beginningOunces, drinker) => {
+      return beginningOunces + drinker.numOunces;
+    }, 0);
+      return allOuncesDrank / userHydrationData.length;
+  };
 
-  singleDayHydration(userID, specificDate) {
-    const userHydrationData = this.findUserById(userID).filter(oneUser => {
-      return oneUser.numOunces;
-    });
-
-    const hydrationLog = userHydrationData.find(element =>
-      element.date === specificDate)
-      return hydrationLog.numOunces;
-  }
+  singleDayHydration(specificUser, specificDate) {
+    const userHydrationData = this.findUserById(specificUser);
+    const date = userHydrationData.find(day => day.date === specificDate)
+      return date.numOunces;
+  };
 
   calculateWeeksHydration(userID, specificDate) {
     const userHydrationData = this.findUserById(userID).filter(oneUser => {
@@ -37,7 +34,6 @@ calculateHydrationAllTime(userID) {
     const ouncesForWeek = wholeWeek.map(day => day.numOunces);
     return ouncesForWeek;
   }
-
 };
 
 if (typeof module !== 'undefined') {

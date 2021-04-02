@@ -44,24 +44,17 @@ describe ('Hydration', () => {
 
   it('should have method to recall fluid ounces drank from single date given', function() {
     expect(hydration.singleDayHydration).to.be.a('function');
-  })
+  });
 
-  it('should recall fluid ounces drank from single date given', function() {
-    expect(hydration.singleDayHydration(1, "2019/06/15")).to.equal(37);
-    expect(hydration.singleDayHydration(1, "2019/06/16")).to.equal(69);
-    expect(hydration.singleDayHydration(2, "2019/06/15")).to.equal(75);
-    expect(hydration.singleDayHydration(2, "2019/06/16")).to.equal(91);
-  })
-
-  it('should have method to recall a weeks fluid oz drank', function() {
-    expect(hydration.calculateWeeksHydration).to.be.a('function');
-  })
+  it('should have method to recall fluid ounces drank from single date given', () => {
+    expect(hydration.singleDayHydration(user.id, '2019/06/15')).to.equal(37);
+  });
 
   it('should recall a weeks fluid oz drank', function() {
     expect(hydration.calculateWeeksHydration(1, "2019/06/22")).to.deep.equal([ 69, 96, 61, 91, 50, 50, 43 ]);
     expect(hydration.calculateWeeksHydration(2, "2019/06/22")).to.deep.equal([ 91, 96, 70, 76, 71, 27, 58 ]);
 
-  })
+  });
 
   it('should recall number of Fluid Ounces drank', () => {
     expect(hydration.calculateHydrationAllTime(1)).to.equal(53);
