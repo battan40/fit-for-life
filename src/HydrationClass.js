@@ -1,3 +1,7 @@
+if (typeof require !== 'undefined') {
+  const moment = require('../src/Moment');
+}
+
 class Hydration {
   constructor(hydrationData) {
     this.hydrationData = hydrationData
@@ -24,16 +28,14 @@ class Hydration {
       return date.numOunces;
   };
 
-  calculateWeeksHydration(userID, specificDate) {
-    const userHydrationData = this.findUserById(userID).filter(oneUser => {
-      return oneUser.numOunces;
+  calculateWeeksHydration(userID, endDate) {
+    const userHydrationData = this.findUserById(userID);
+    const begDate = moment(new Date(endDate)).subtract(6, 'days').format('YYYY/MM/DD');
+    const weekHydration = userHydrationData.filter(week => {
+      return week.date >= begDate && week.date <= endDate
     });
-
-    const startingDate = userHydrationData.findIndex(data => data.date === specificDate)
-    const wholeWeek = userHydrationData.slice(startingDate - 6, startingDate + 1)
-    const ouncesForWeek = wholeWeek.map(day => day.numOunces);
-    return ouncesForWeek;
-  }
+    return weekHydration.map(weekOunces => weekOunces.numOunces);
+  };
 };
 
 if (typeof module !== 'undefined') {
