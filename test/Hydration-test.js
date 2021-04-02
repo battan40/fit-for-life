@@ -24,10 +24,9 @@ describe ('Hydration', () => {
   });
 
   it('should recall average of all time Fluid Ounces drank', function() {
-    console.log(hydration.allOuncesDrank, '<<<<allozdrank')
     expect(hydration.calculateHydrationAllTime).to.be.a('function');
-    expect(hydration.calculateHydrationAllTime(1)).to.equal(142);
-    expect(hydration.calculateHydrationAllTime(2)).to.equal(80.57);
+    expect(hydration.calculateHydrationAllTime(1)).to.equal(62.125);
+    expect(hydration.calculateHydrationAllTime(2)).to.equal(70.5);
   })
 
   it('should have method to recall fluid ounces drank from single date given', function() {
@@ -39,8 +38,6 @@ describe ('Hydration', () => {
     expect(hydration.singleDayHydration(1, "2019/06/16")).to.equal(69);
     expect(hydration.singleDayHydration(2, "2019/06/15")).to.equal(75);
     expect(hydration.singleDayHydration(2, "2019/06/16")).to.equal(91);
-
-
   })
 
 });

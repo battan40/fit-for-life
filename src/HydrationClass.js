@@ -19,7 +19,7 @@ class Hydration {
     const allOuncesDrank = userHydrationData.reduce((beginningOunces, drinker) => {
       return beginningOunces + drinker.numOunces;
     }, 0);
-
+    console.log(allOuncesDrank, userHydrationData.length, userHydrationData)
       return allOuncesDrank / userHydrationData.length;
   }
 
