@@ -26,7 +26,6 @@ describe ('Hydration', () => {
   });
 
   it('should be able to locate a single user by their unique id', () => {
-    console.log("user", hydration.findUserById(user.id))
     expect(hydration.findUserById(user.id)).to.deep.equal( [
       { userID: 1, date: '2019/06/15', numOunces: 37 },
       { userID: 1, date: '2019/06/16', numOunces: 75 },
@@ -38,11 +37,10 @@ describe ('Hydration', () => {
     ]);
   });
 
-  it('should recall average of all time Fluid Ounces drank', function() {
-    expect(hydration.calculateHydrationAllTime).to.be.a('function');
-    expect(hydration.calculateHydrationAllTime(1)).to.equal(62.125);
-    expect(hydration.calculateHydrationAllTime(2)).to.equal(70.5);
-  })
+  it('should recall number of Fluid Ounces drank', () => {
+    expect(hydration.calculateHydrationAllTime(1)).to.equal(66.71428571428571);
+    expect(hydration.calculateHydrationAllTime(2)).to.equal(68.14285714285714);
+  });
 
   it('should have method to recall fluid ounces drank from single date given', function() {
     expect(hydration.singleDayHydration).to.be.a('function');

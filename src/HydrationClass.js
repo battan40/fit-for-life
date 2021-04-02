@@ -9,16 +9,13 @@ class Hydration {
   })
 };
 
-  calculateHydrationAllTime(userID) {
-    const userHydrationData = this.findUserById(userID).filter(oneUser => {
-      return oneUser.numOunces;
-    });
-
-    const allOuncesDrank = userHydrationData.reduce((beginningOunces, drinker) => {
-      return beginningOunces + drinker.numOunces;
-    }, 0);
-      return allOuncesDrank / userHydrationData.length;
-  }
+calculateHydrationAllTime(userID) {
+  const userHydrationData = this.findUserById(userID);
+  const allOuncesDrank = userHydrationData.reduce((beginningOunces, drinker) => {
+    return beginningOunces + drinker.numOunces;
+  }, 0);
+    return allOuncesDrank / userHydrationData.length;
+};
 
   singleDayHydration(userID, specificDate) {
     const userHydrationData = this.findUserById(userID).filter(oneUser => {
