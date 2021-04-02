@@ -1,5 +1,6 @@
 let currentUser;
 let allUsers = new UserRepo(userData);
+let hydration = new Hydration(hydrationData);
 const displayUser = document.querySelector('#displayUser');
 const userStepGoal = document.querySelector('#stepGoal');
 const friendsContainer = document.querySelector('#friendContainer');
@@ -10,7 +11,8 @@ function onPageLoad() {
   getRandomUser();
   displayAllAverageSteps();
   displayUserAverageSteps();
-}
+  displayDailyWaterIntake();
+};
 
 function getRandomUser() {
   currentUser = new User(allUsers.returnUsersData(getRandomIndex(userData)));
@@ -38,6 +40,18 @@ function displayAllAverageSteps() {
   const allUsersStepsGoals = document.querySelector('#allUsersStepsGoals');
   allUsersStepsGoals.innerText = `User's Step Goal Average: ${allUsers.returnAllUsersStepGoal()}`;
 };
+
+function displayDailyWaterIntake(day) {
+  const dailyHydration = document.querySelector('#userHydrationGoal');
+  dailyHydration.innerText = `${currentUser.name}'s Daily Hydration: ${hydration.singleDayHydration(day)}`;
+  displayWeeklyWaterIntake()
+};
+
+function displayWeeklyWaterIntake() {
+  const weeklyHydration = document.querySelector('#userWeeklyHydration');
+  weeklyHydration.innerText = `${currentUser.name}'s Water For The Week:
+  ${hydration.calculateWeeklyHydration()}`;
+}
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length) + 1;

@@ -1,48 +1,41 @@
+if (typeof require !== 'undefined') {
+  var moment = require('../src/Moment');
+}
+
 class Hydration {
   constructor(hydrationData) {
     this.hydrationData = hydrationData
+
   }
 
-  findUserById(userID) {
-     let uniqueUserData = this.hydrationData.filter(user => {
-      return user.userID === userID;
-    });
-
-    return uniqueUserData;
-  }
+  findUserById(userId) {
+    return this.hydrationData.filter(user => {
+    return  user.userID === userId
+    })
+  };
 
   calculateHydrationAllTime(userID) {
-    const userHydrationData = this.findUserById(userID).filter(oneUser => {
-      return oneUser.numOunces;
-    });
-
+    const userHydrationData = this.findUserById(userID);
     const allOuncesDrank = userHydrationData.reduce((beginningOunces, drinker) => {
       return beginningOunces + drinker.numOunces;
     }, 0);
       return allOuncesDrank / userHydrationData.length;
-  }
+  };
 
-  singleDayHydration(userID, specificDate) {
-    const userHydrationData = this.findUserById(userID).filter(oneUser => {
-      return oneUser.numOunces;
+  singleDayHydration(specificUser, specificDate) {
+    const userHydrationData = this.findUserById(specificUser);
+    const date = userHydrationData.find(day => day.date === specificDate)
+      return date.numOunces;
+  };
+
+  calculateWeeksHydration(userID, endDate) {
+    const userHydrationData = this.findUserById(userID);
+    const begDate = moment(new Date(endDate)).subtract(6, 'days').format('YYYY/MM/DD');
+    const weekHydration = userHydrationData.filter(week => {
+      return week.date >= begDate && week.date <= endDate
     });
-
-    const hydrationLog = userHydrationData.find(element =>
-      element.date === specificDate)
-      return hydrationLog.numOunces;
-  }
-
-  calculateWeeksHydration(userID, specificDate) {
-    const userHydrationData = this.findUserById(userID).filter(oneUser => {
-      return oneUser.numOunces;
-    });
-
-    const startingDate = userHydrationData.findIndex(data => data.date === specificDate)
-    const wholeWeek = userHydrationData.slice(startingDate - 6, startingDate + 1)
-    const ouncesForWeek = wholeWeek.map(day => day.numOunces);
-    return ouncesForWeek;
-  }
-
+    return weekHydration.map(weekOunces => weekOunces.numOunces);
+  };
 };
 
 if (typeof module !== 'undefined') {
