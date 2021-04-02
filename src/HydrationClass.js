@@ -1,5 +1,5 @@
 if (typeof require !== 'undefined') {
-  const moment = require('../src/Moment');
+  var moment = require('../src/Moment');
 }
 
 class Hydration {
