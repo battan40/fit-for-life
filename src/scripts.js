@@ -33,6 +33,7 @@ function getMainUser() {
 }
 
 function getMainUserHydration(user, date) {
+  const hydration = new Hydration(hydrationData);
 
 }
 
