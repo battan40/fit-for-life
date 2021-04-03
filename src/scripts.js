@@ -35,6 +35,8 @@ function getMainUser() {
 function getMainUserHydration(user, date) {
   const hydration = new Hydration(hydrationData);
   const weekTotal = hydration.calculateWeeksHydration(user.id, date);
+  const weekSum = weekTotal.reduce((paramA, paramB) => {return paramA + paramB;},0);
+
 
 }
 
