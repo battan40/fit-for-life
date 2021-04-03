@@ -38,7 +38,6 @@ function getMainUserHydration(user, date) {
   userHydrationDisplay.innerText = ` hydration: ${hydration.singleDayHydration(user.id, date)} Oz Today!`;
   userWeeklyHydration.innerText = ` Weeks water intake: ${weekSum} oz this week!`;
 
-
 }
 
 
