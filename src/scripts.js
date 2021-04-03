@@ -26,6 +26,7 @@ function onPageLoad() {
 function getMainUser() {
   currentUser = new User(allUsers.returnUsersData(getRandomIndex(userData)));
   displayUser.innerText = currentUser.name;
+  userStepGoal.innerText = ` Step Goal: ${currentUser.dailyStepGoal}`;
 
 
 };
