@@ -11,12 +11,13 @@ class Activity {
     return this.hydrationData.filter(user => {
     return  user.userID === userId
     })
+  };
 
   milesWalkedOnDay(userID, date) {
     const userStepData = this.findUserById(userID);
 
     const date = userStepData.find(day => day.date === specificDate)
-      return date.numOunces;
+    console.log(date)
   }
 
 };
