@@ -13,7 +13,7 @@ describe ('Activity', () => {
   beforeEach(() => {
     user1 = new User(testUserData[0]);
     user2 = new User(testUserData[1]);
-    activity = new Activity(testActivityData, user1);
+    activity = new Activity(testActivityData);
   });
 
   it('should be a function', () => {
@@ -22,6 +22,16 @@ describe ('Activity', () => {
 
   it('should instantiate an Activity', () => {
     expect(activity).to.be.an.instanceof(Activity);
+  });
+
+  it('should be able to locate a single user by their unique id', () => {
+    activity.milesWalkedOnDay(1, "2019/06/15");
+    expect(activity.milesWalkedOnDay).to.be.a('function');
+  });
+
+  it('should be able to locate a single user by their unique id', () => {
+    activity.milesWalkedOnDay(1, "2019/06/15");
+    expect(activity.milesWalkedOnDay).to.be.a('function');
   });
 
 });

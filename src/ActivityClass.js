@@ -7,17 +7,18 @@ class Activity {
     this.activityData = activityData;
   }
 
-  findUserById(userId) {
-    return this.hydrationData.filter(user => {
-    return  user.userID === userId
+  findUserByID(userID) {
+    return this.activityData.filter(user => {
+    return  user.userID === userID
     })
-  };
+  }
 
-  milesWalkedOnDay(userID, date) {
-    const userStepData = this.findUserById(userID);
-
+  milesWalkedOnDay(userID, specificDate) {
+    const user = 
+    const userStepData = this.findUserByID(userID);
     const date = userStepData.find(day => day.date === specificDate)
-    console.log(date)
+    const strideToMile = 5280 / userStepData;
+    console.log(strideToMile)
   }
 
 };
