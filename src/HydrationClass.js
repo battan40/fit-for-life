@@ -22,8 +22,8 @@ class Hydration {
       return allOuncesDrank / userHydrationData.length;
   };
 
-  singleDayHydration(specificUser, specificDate) {
-    const userHydrationData = this.findUserById(specificUser);
+  singleDayHydration(userID, specificDate) {
+    const userHydrationData = this.findUserById(userID);
     const date = userHydrationData.find(day => day.date === specificDate)
       return date.numOunces;
   };
