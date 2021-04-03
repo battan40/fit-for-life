@@ -34,10 +34,6 @@ describe ('Sleep', () => {
       { userID: 1, date: '2019/06/21', hoursSlept: 5.1, sleepQuality: 2.6 }]);
   });
 
-  // it('should only accept a number entry for hours slept', () => {
-  //   expect(sleep.enterNumberOnly(user.id)).to.equal(6.1)
-  // });
-
   it('should be able to record hours slept from a single user on a single date given', () => {
     expect(sleep.hoursSleptOneUser(user.id, '2019/06/15')).to.equal(6.1);
   });
@@ -57,10 +53,10 @@ describe ('Sleep', () => {
   });
 
   it('should return a list of hours slept each day per any week', () => {
-  expect(sleep.calculateWeeksHoursSlept(1, "2019/06/21")).to.deep.equal( [ 6.1, 7, 10.8, 5.4, 4.1, 9.6, 5.1 ]);
+    expect(sleep.calculateWeeksHoursSlept(1, "2019/06/21")).to.deep.equal( [ 6.1, 7, 10.8, 5.4, 4.1, 9.6, 5.1 ]);
   });
 
   it('should return a list of sleep Quality numbers for each day per any week', () => {
-  expect(sleep.calculateWeeklySleepQuality(1, "2019/06/21")).to.deep.equal([ 2.2, 4.7, 4.7, 3, 3.6, 2.9, 2.6 ]);
+    expect(sleep.calculateWeeklySleepQuality(1, "2019/06/21")).to.deep.equal([ 2.2, 4.7, 4.7, 3, 3.6, 2.9, 2.6 ]);
   });
 });

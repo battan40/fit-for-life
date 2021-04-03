@@ -13,11 +13,6 @@ class Sleep {
     })
   };
 
-  // enterNumberOnly(id) {
-  //
-  // }
-
-
   hoursSleptOneUser(oneUser, oneDay) {
     const userSleepData = this.filterUserById(oneUser);
     const date = userSleepData.find(day => day.date === oneDay)
