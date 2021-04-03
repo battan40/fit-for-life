@@ -18,6 +18,14 @@ class Sleep {
     const date = userSleepData.find(day => day.date === oneDay)
       return date.hoursSlept;
   }
+
+  returnSleepQualityAllTime(oneId) {
+    const userSleepData = this.filterUserById(oneId);
+    const allSleepQuality = userSleepData.reduce((startQuality, sleeper) => {
+      return startQuality + sleeper.sleepQuality;
+    }, 0);
+      return allSleepQuality / userSleepData.length;
+  }
 };
 
 if (typeof module !== 'undefined') {
