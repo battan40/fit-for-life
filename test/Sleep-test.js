@@ -16,10 +16,15 @@ describe ('Sleep', () => {
   });
 
   it('should be a function', () => {
-  expect(Sleep).to.be.a('function');
+    expect(Sleep).to.be.a('function');
   });
 
-  it('should instantiate Hydration', () => {
-  expect(sleep).to.be.an.instanceOf(Sleep);
+  it('should instantiate Sleep', () => {
+    expect(sleep).to.be.an.instanceOf(Sleep);
+  });
+
+  it('should be able to locate a single user by their unique id', () => {
+    expect(sleep.filterUserById(user.id)).to.deep.equal( [
+      { userID: 1, date: '2019/06/15', hoursSlept: 6.1, sleepQuality: 2.2 }])
   });
 });
