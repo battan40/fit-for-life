@@ -32,6 +32,10 @@ function getMainUser() {
   emailDisplay.innerText = `${currentUser.email}`;
 }
 
+function getMainUserHydration(user, date) {
+
+}
+
 // function getFriends() {
 //   currentUser.friends.forEach(friend => {
 //     const foundFriend = userData.find(person => friend === person.id);
