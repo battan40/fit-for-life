@@ -42,9 +42,6 @@ describe ('Hydration', () => {
     expect(hydration.calculateHydrationAllTime(2)).to.equal(68.14285714285714);
   });
 
-  it('should have method to recall fluid ounces drank from single date given', function() {
-    expect(hydration.singleDayHydration).to.be.a('function');
-  });
 
   it('should have method to recall fluid ounces drank from single date given', () => {
     expect(hydration.singleDayHydration(user.id, '2019/06/15')).to.equal(37);
