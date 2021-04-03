@@ -29,3 +29,8 @@ const testSleepData = [
     "hoursSlept": 4.1,
     "sleepQuality": 3.6
   },
+]
+
+if (typeof module !== 'undefined') {
+  module.exports = testSleepData;
+}
