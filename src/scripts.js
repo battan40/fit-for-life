@@ -46,9 +46,7 @@ function getFriends() {
   const randomfriend3 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
   friend1.innerText = randomfriend1.name;
   friend2.innerText = randomfriend2.name;
-
-
-
+  friend3.innerText = randomfriend3.name;
 }
 
 
