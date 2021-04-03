@@ -25,6 +25,8 @@ function onPageLoad() {
 };
 
 function getMainUser() {
+  currentUser = new User(allUsers.returnUsersData(getRandomIndex(userData)));
+
 
 }
 
