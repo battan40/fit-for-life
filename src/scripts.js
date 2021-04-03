@@ -29,8 +29,6 @@ function getMainUser() {
   userStepGoal.innerText = ` Step Goal: ${currentUser.dailyStepGoal}`;
   stridelength.innerText = ` Stride length: ${currentUser.strideLength}`;
   emailDisplay.innerText = `${currentUser.email}`;
-
-
 };
 
 function getMainUserHydration(user, date) {
