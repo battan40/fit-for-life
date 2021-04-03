@@ -24,7 +24,9 @@ function onPageLoad() {
   // displayDailyWaterIntake();
 };
 
+function getMainUser() {
 
+}
 
 // function getFriends() {
 //   currentUser.friends.forEach(friend => {
