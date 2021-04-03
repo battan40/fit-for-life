@@ -6,7 +6,11 @@ const userStepGoal = document.querySelector('#stepGoal');
 const friendsContainer = document.querySelector('#friendContainer');
 const stridelength = document.getElementById('stridelength');
 const emailDisplay = document.getElementById('emailDisplay');
-
+const userHydrationDisplay = document.getElementById('userHydrationDisplay');
+const userWeeklyHydration = document.getElementById('userWeeklyHydration');
+const friend1 = document.getElementById('friend1');
+const friend2 = document.getElementById('friend2');
+const friend3 = document.getElementById('friend3');
 
 window.addEventListener('load', onPageLoad);
 
