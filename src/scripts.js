@@ -38,8 +38,6 @@ function getMainUserHydration(user, date) {
   const weekSum = weekTotal.reduce((paramA, paramB) => {return paramA + paramB;},0);
   userHydrationDisplay.innerText = ` hydration: ${hydration.singleDayHydration(user.id, date)} Oz Today!`;
   userWeeklyHydration.innerText = ` Weeks water intake: ${weekSum} oz this week!`;
-
-
 }
 
 // function getFriends() {
