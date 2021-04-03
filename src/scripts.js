@@ -40,6 +40,13 @@ function getMainUserHydration(user, date) {
   userWeeklyHydration.innerText = ` Weeks water intake: ${weekSum} oz this week!`;
 }
 
+function getFriends() {
+  const randomfriend1 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
+
+
+}
+
+
 // function getFriends() {
 //   currentUser.friends.forEach(friend => {
 //     const foundFriend = userData.find(person => friend === person.id);
