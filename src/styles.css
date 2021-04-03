@@ -36,9 +36,10 @@
 }
 
 .user-info {
-  padding: 3%;
   display: flex;
+  padding: 3%;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .user-stats {
@@ -90,7 +91,7 @@
   /* ******** top container ******** */
 
   .main {
-    height: 100vh;
+    /* height: 100vh; */
   }
 
   .top-article {

@@ -1,57 +1,87 @@
 let currentUser;
-let allUsers = new UserRepo(userData);
-let hydration = new Hydration(hydrationData);
+const allUsers = new UserRepo(userData);
+const hydration = new Hydration(hydrationData);
 const displayUser = document.querySelector('#displayUser');
 const userStepGoal = document.querySelector('#stepGoal');
 const friendsContainer = document.querySelector('#friendContainer');
+const stridelength = document.getElementById('stridelength');
+const emailDisplay = document.getElementById('emailDisplay');
+const userHydrationDisplay = document.getElementById('userHydrationDisplay');
+const userWeeklyHydration = document.getElementById('userWeeklyHydration');
+const friend1 = document.getElementById('friend1');
+const friend2 = document.getElementById('friend2');
+const friend3 = document.getElementById('friend3');
+
 
 window.addEventListener('load', onPageLoad);
 
 function onPageLoad() {
-  getRandomUser();
-  displayAllAverageSteps();
-  displayUserAverageSteps();
-  displayDailyWaterIntake();
+  getMainUser();
+  getFriends();
+  getMainUserHydration(currentUser, "2019/09/22");
+  // displayAllAverageSteps();
+  // displayUserAverageSteps();
+  // displayDailyWaterIntake();
 };
 
-function getRandomUser() {
+function getMainUser() {
   currentUser = new User(allUsers.returnUsersData(getRandomIndex(userData)));
   displayUser.innerText = currentUser.name;
   userStepGoal.innerText = ` Step Goal: ${currentUser.dailyStepGoal}`;
-};
+  stridelength.innerText = ` Stride length: ${currentUser.strideLength}`;
+  emailDisplay.innerText = `${currentUser.email}`;
+}
+
+function getMainUserHydration(user, date) {
+  const hydration = new Hydration(hydrationData);
+  const weekTotal = hydration.calculateWeeksHydration(user.id, date);
+  const weekSum = weekTotal.reduce((paramA, paramB) => {return paramA + paramB;},0);
+  userHydrationDisplay.innerText = ` hydration: ${hydration.singleDayHydration(user.id, date)} Oz Today!`;
+  userWeeklyHydration.innerText = ` Weeks water intake: ${weekSum} oz this week!`;
+}
 
 function getFriends() {
-  currentUser.friends.forEach(friend => {
-    const foundFriend = userData.find(person => friend === person.id);
-    let displayFriendData = `<article class="friend">
-      <h2 class="friend-name">${foundFriend.name}</h2>
-      <h2 class="friend-step-goal">${foundFriend.dailyStepGoal}</h2>
-    </article>`
-    friendsContainer.insertAdjacentHTML('beforeend', displayFriendData);
-  });
-};
-
-function displayUserAverageSteps() {
-  const userStepGoal = document.querySelector('#userStepGoal');
-  userStepGoal.innerText = `User's Daily Step Average ${currentUser.dailyStepGoal}`;
-};
-
-function displayAllAverageSteps() {
-  const allUsersStepsGoals = document.querySelector('#allUsersStepsGoals');
-  allUsersStepsGoals.innerText = `User's Step Goal Average: ${allUsers.returnAllUsersStepGoal()}`;
-};
-
-function displayDailyWaterIntake(day) {
-  const dailyHydration = document.querySelector('#userHydrationGoal');
-  dailyHydration.innerText = `${currentUser.name}'s Daily Hydration: ${hydration.singleDayHydration(day)}`;
-  displayWeeklyWaterIntake()
-};
-
-function displayWeeklyWaterIntake() {
-  const weeklyHydration = document.querySelector('#userWeeklyHydration');
-  weeklyHydration.innerText = `${currentUser.name}'s Water For The Week:
-  ${hydration.calculateWeeklyHydration()}`;
+  const randomfriend1 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
+  const randomfriend2 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
+  const randomfriend3 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
+  friend1.innerText = randomfriend1.name;
+  friend2.innerText = randomfriend2.name;
+  friend3.innerText = randomfriend3.name;
 }
+
+
+// function getFriends() {
+//   currentUser.friends.forEach(friend => {
+//     const foundFriend = userData.find(person => friend === person.id);
+//     let displayFriendData = `<article class="friend">
+//       <h2 class="friend-name">${foundFriend.name}</h2>
+//       <h2 class="friend-step-goal">${foundFriend.dailyStepGoal}</h2>
+//     </article>`
+//     friendsContainer.insertAdjacentHTML('beforeend', displayFriendData);
+//   });
+// };
+
+// function displayUserAverageSteps() {
+//   const userStepGoal = document.querySelector('#userStepGoal');
+//   userStepGoal.innerText = `User's Daily Step Average ${currentUser.dailyStepGoal}`;
+// };
+
+// function displayAllAverageSteps() {
+//   const allUsersStepsGoals = document.querySelector('#allUsersStepsGoals');
+//   allUsersStepsGoals.innerText = `User's Step Goal Average: ${allUsers.returnAllUsersStepGoal()}`;
+// };
+
+// function displayDailyWaterIntake(day) {
+//   const dailyHydration = document.querySelector('#userHydrationGoal');
+//   dailyHydration.innerText = `${currentUser.name}'s Daily Hydration: ${hydration.singleDayHydration(day)}`;
+//   displayWeeklyWaterIntake()
+// };
+
+// function displayWeeklyWaterIntake() {
+//   const weeklyHydration = document.querySelector('#userWeeklyHydration');
+//   weeklyHydration.innerText = `${currentUser.name}'s Water For The Week:
+//   ${hydration.calculateWeeklyHydration()}`;
+// }
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length) + 1;
