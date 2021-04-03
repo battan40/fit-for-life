@@ -14,6 +14,9 @@ class Activity {
 
   milesWalkedOnDay(userID, date) {
     const userStepData = this.findUserById(userID);
+
+    const date = userStepData.find(day => day.date === specificDate)
+      return date.numOunces;
   }
 
 };
