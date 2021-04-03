@@ -12,6 +12,7 @@ const friend1 = document.getElementById('friend1');
 const friend2 = document.getElementById('friend2');
 const friend3 = document.getElementById('friend3');
 
+
 window.addEventListener('load', onPageLoad);
 
 function onPageLoad() {
@@ -23,32 +24,6 @@ function onPageLoad() {
   // displayDailyWaterIntake();
 };
 
-function getMainUser() {
-  currentUser = new User(allUsers.returnUsersData(getRandomIndex(userData)));
-  displayUser.innerText = currentUser.name;
-  userStepGoal.innerText = ` Step Goal: ${currentUser.dailyStepGoal}`;
-  stridelength.innerText = ` Stride length: ${currentUser.strideLength}`;
-  emailDisplay.innerText = `${currentUser.email}`;
-};
-
-function getMainUserHydration(user, date) {
-  const hydration = new Hydration(hydrationData);
-  const weekTotal = hydration.calculateWeeksHydration(user.id, date);
-  const weekSum = weekTotal.reduce((paramA, paramB) => {return paramA + paramB;},0);
-  userHydrationDisplay.innerText = ` hydration: ${hydration.singleDayHydration(user.id, date)} Oz Today!`;
-  userWeeklyHydration.innerText = ` Weeks water intake: ${weekSum} oz this week!`;
-
-}
-
-
-function getFriends() {
-  const randomfriend1 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
-  const randomfriend2 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
-  const randomfriend3 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
-  friend1.innerText = randomfriend1.name;
-  friend2.innerText = randomfriend2.name;
-  friend3.innerText = randomfriend3.name;
-}
 
 
 // function getFriends() {
