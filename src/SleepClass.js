@@ -8,15 +8,16 @@ class Sleep {
   }
 
   filterUserById(id) {
-    console.log(id);
     return this.sleepData.filter(user => {
     return  user.userID === id
     })
   };
-  // dayAveHoursSleptOneUser() {
-  //
-  // }
 
+  dayAveHoursSleptOneUser(oneUser, oneDay) {
+    const userSleepData = this.filterUserById(oneUser);
+    const date = userSleepData.find(day => day.date === oneDay)
+      return date.hoursSlept;
+  }
 };
 
 if (typeof module !== 'undefined') {

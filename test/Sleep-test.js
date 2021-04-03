@@ -27,4 +27,9 @@ describe ('Sleep', () => {
     expect(sleep.filterUserById(user.id)).to.deep.equal( [
       { userID: 1, date: '2019/06/15', hoursSlept: 6.1, sleepQuality: 2.2 }])
   });
+
+  it('should have method to recall fluid ounces drank from single date given', () => {
+    expect(sleep.dayAveHoursSleptOneUser(user.id, '2019/06/15')).to.equal(6.1);
+  });
+
 });
