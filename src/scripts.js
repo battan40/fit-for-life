@@ -42,6 +42,7 @@ function getMainUserHydration(user, date) {
 
 function getFriends() {
   const randomfriend1 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
+  const randomfriend2 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
 
 
 }
