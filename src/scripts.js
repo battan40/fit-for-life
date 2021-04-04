@@ -19,8 +19,8 @@ function onPageLoad() {
   getMainUser();
   getFriends();
   getMainUserHydration(currentUser, "2019/09/22");
-  // displayAllAverageSteps();
-  // displayUserAverageSteps();
+  displayAllAverageSteps();
+  displayUserAverageSteps();
   // displayDailyWaterIntake();
 };
 
@@ -41,35 +41,25 @@ function getMainUserHydration(user, date) {
 }
 
 function getFriends() {
-  const randomfriend1 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
-  const randomfriend2 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
-  const randomfriend3 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
-  friend1.innerText = randomfriend1.name;
-  friend2.innerText = randomfriend2.name;
-  friend3.innerText = randomfriend3.name;
-}
+  currentUser.friends.forEach(friend => {
+    const foundFriend = userData.find(person => friend === person.id);
+    let displayFriendData = `<article class="friend">
+      <h3 class="friend-name">${foundFriend.name}</h3>
+      <h3 class="friend-step-goal">${foundFriend.dailyStepGoal}</h3>
+    </article>`
+    friendsContainer.insertAdjacentHTML('beforeend', displayFriendData);
+  });
+};
 
+function displayUserAverageSteps() {
+  const userStepGoal = document.querySelector('#userStepGoal');
+  userStepGoal.innerText = `User's Daily Step Average ${currentUser.dailyStepGoal}`;
+};
 
-// function getFriends() {
-//   currentUser.friends.forEach(friend => {
-//     const foundFriend = userData.find(person => friend === person.id);
-//     let displayFriendData = `<article class="friend">
-//       <h2 class="friend-name">${foundFriend.name}</h2>
-//       <h2 class="friend-step-goal">${foundFriend.dailyStepGoal}</h2>
-//     </article>`
-//     friendsContainer.insertAdjacentHTML('beforeend', displayFriendData);
-//   });
-// };
-
-// function displayUserAverageSteps() {
-//   const userStepGoal = document.querySelector('#userStepGoal');
-//   userStepGoal.innerText = `User's Daily Step Average ${currentUser.dailyStepGoal}`;
-// };
-
-// function displayAllAverageSteps() {
-//   const allUsersStepsGoals = document.querySelector('#allUsersStepsGoals');
-//   allUsersStepsGoals.innerText = `User's Step Goal Average: ${allUsers.returnAllUsersStepGoal()}`;
-// };
+function displayAllAverageSteps() {
+  const allUsersStepsGoals = document.querySelector('#allUsersStepsGoals');
+  allUsersStepsGoals.innerText = `User's Step Goal Average: ${allUsers.returnAllUsersStepGoal()}`;
+};
 
 // function displayDailyWaterIntake(day) {
 //   const dailyHydration = document.querySelector('#userHydrationGoal');
@@ -86,3 +76,13 @@ function getFriends() {
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length) + 1;
 };
+
+//
+// function getFriends() {
+//   const randomfriend1 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
+//   const randomfriend2 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
+//   const randomfriend3 = new User(allUsers.returnUsersData(getRandomIndex(userData)));
+//   friend1.innerText = randomfriend1.name;
+//   friend2.innerText = randomfriend2.name;
+//   friend3.innerText = randomfriend3.name;
+// }
