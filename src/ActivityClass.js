@@ -25,7 +25,6 @@ class Activity {
     const onDate = userStepData.find(day => day.date === specificDate)
     const strideToMile = 5280 / this.findUserStride(userID)
     const milesWalked = onDate.numSteps / strideToMile;
-    console.log(milesWalked, '<<<<miles walked')
     return milesWalked
   }
 
@@ -36,13 +35,18 @@ class Activity {
     return minutesActive;
   }
 
-  minutesActiveAverageOnWeek(UserID, specificDate) {
+  minutesActiveAverageOnWeek(userID, endDate) {
     const userStepData = this.findUserActivity(userID);
     const begDate = moment(new Date(endDate)).subtract(6, 'days').format('YYYY/MM/DD');
     const weekActive = userStepData.filter(week => {
       return week.date >= begDate && week.date <= endDate
     });
-    console.log(weekActive);
+    const minutesActive = weekActive.reduce((timeActive, day) => {
+      timeActive =+ day.minutesActive;
+      return timeActive;
+    },0)
+    console.log(minutesActive / weekActive.length)
+    return minutesActive / weekActive.length
   }
 
 };
