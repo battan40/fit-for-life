@@ -113,9 +113,9 @@ describe ('Activity', () => {
     expect(activity.AchieveGoal(2, "2019/06/18")).to.equal(false);
   });
 
-  t.only('Should check if user exceeded step goal in dates logged', () => {
-    expect(activity.ExceededGoal(1)).to.equal(true);
-    expect(activity.ExceededGoal(2)).to.equal(false);
+  it.only('Should check if user exceeded step goal in dates logged', () => {
+    expect(activity.ExceededGoal(1)).to.equal();
+    expect(activity.ExceededGoal(2)).to.equal();
   })
 
 });
