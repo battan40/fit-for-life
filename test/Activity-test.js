@@ -26,7 +26,7 @@ describe ('Activity', () => {
 
   it('should be able to locate a single user\'s activity data by their unique id', () => {
 
-    expect(activity.findUserActivity(1)).to.equal([
+    expect(activity.findUserActivity(1)).to.deep.equal([
   {
     userID: 1,
     date: '2019/06/15',
@@ -92,5 +92,15 @@ describe ('Activity', () => {
   }
 ]);
   });
+
+  it('should calculate miles walked on a single day for user', () => {
+    expect(activity.milesWalkedOnDay(1, "2019/06/16")).to.equal(5.405132575757576)
+    expect(activity.milesWalkedOnDay(2, "2019/06/18")).to.equal(3.973295454545455)
+
+  })
+
+  it('should find how many minutes user was active for on date', () => {
+    expect(activity.minutesActiveOnDay(1, "2019/06/16")).to.equal(175)
+  })
 
 });

@@ -15,7 +15,6 @@ class Activity {
   }
 
   findUserStride(userID) {
-    console.log(this.findUserActivity(userID), '<<<find user activity')
     const userInfo = userData.find(user => user.id === userID)
     const userStrideLength = userInfo.strideLength
     return userStrideLength;
@@ -26,7 +25,17 @@ class Activity {
     const onDate = userStepData.find(day => day.date === specificDate)
     const strideToMile = 5280 / this.findUserStride(userID)
     const milesWalked = onDate.numSteps / strideToMile;
+    console.log(milesWalked, '<<<<miles walked')
     return milesWalked
+  }
+
+  minutesActiveOnDay(userID, specificDate) {
+    const userStepData = this.findUserActivity(userID);
+    const onDate = userStepData.find(day => day.date === specificDate)
+    const minutesActive = onDate.minutesActive;
+    console.log(minutesActive, '<<<minutesactive');
+    return minutesActive;
+
   }
 
 };
