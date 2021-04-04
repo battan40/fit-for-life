@@ -94,13 +94,15 @@ describe ('Activity', () => {
   });
 
   it('should calculate miles walked on a single day for user', () => {
-    expect(activity.milesWalkedOnDay(1, "2019/06/16")).to.equal(5.405132575757576)
-    expect(activity.milesWalkedOnDay(2, "2019/06/18")).to.equal(3.973295454545455)
+    expect(activity.milesWalkedOnDay(1, "2019/06/16")).to.equal(5.405132575757576);
+    expect(activity.milesWalkedOnDay(2, "2019/06/18")).to.equal(3.973295454545455);
 
   })
 
   it('should find how many minutes user was active for on date', () => {
-    expect(activity.minutesActiveOnDay(1, "2019/06/16")).to.equal(175)
+    expect(activity.minutesActiveOnDay(1, "2019/06/16")).to.equal(175);
+    expect(activity.minutesActiveOnDay(2, "2019/06/20")).to.equal(74);
+
   })
 
 });
