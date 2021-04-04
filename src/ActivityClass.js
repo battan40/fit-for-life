@@ -52,10 +52,12 @@ class Activity {
     const userInfo = userData.find(user => user.id === userID)
     const userStepData = this.findUserActivity(userID);
     const StepDataOnDate = userStepData.find(day => day.date === specificDate)
-    console.log(userInfo.numSteps >= StepDataOnDate.numSteps);
-    return userInfo.numSteps >= StepDataOnDate.numSteps;
-
+    console.log(userInfo.dailyStepGoal <= StepDataOnDate.numSteps);
+    console.log(userInfo.dailyStepGoal, '<<stepgoal', StepDataOnDate.numSteps, '<< actual steps')
+    return userInfo.dailyStepGoal <= StepDataOnDate.numSteps;
   }
+
+
 
 };
 
