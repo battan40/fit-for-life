@@ -33,9 +33,16 @@ class Activity {
     const userStepData = this.findUserActivity(userID);
     const onDate = userStepData.find(day => day.date === specificDate)
     const minutesActive = onDate.minutesActive;
-    console.log(minutesActive, '<<<minutesactive');
     return minutesActive;
+  }
 
+  minutesActiveAverageOnWeek(UserID, specificDate) {
+    const userStepData = this.findUserActivity(userID);
+    const begDate = moment(new Date(endDate)).subtract(6, 'days').format('YYYY/MM/DD');
+    const weekActive = userStepData.filter(week => {
+      return week.date >= begDate && week.date <= endDate
+    });
+    console.log(weekActive);
   }
 
 };
@@ -48,7 +55,11 @@ if (typeof module !== 'undefined') {
 };
 
 
-//To determine the number of steps it will take you to walk a mile,
-//divide 5,280 by your step length.
-//To determine the number of strides it will take you to walk a mile,
-//divide 5,280 by your stride length.
+// calculateWeeksHydration(userID, endDate) {
+//   const userHydrationData = this.findUserById(userID);
+//   const begDate = moment(new Date(endDate)).subtract(6, 'days').format('YYYY/MM/DD');
+//   const weekHydration = userHydrationData.filter(week => {
+//     return week.date >= begDate && week.date <= endDate
+//   });
+//   return weekHydration.map(weekOunces => weekOunces.numOunces);
+// };
