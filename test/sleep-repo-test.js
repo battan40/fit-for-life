@@ -42,5 +42,9 @@ describe ('Sleep', () => {
       { userID: 1, date: '2019/06/20', hoursSlept: 9.6, sleepQuality: 2.9 },
       { userID: 1, date: '2019/06/21', hoursSlept: 5.1, sleepQuality: 2.6 }]);
     });
+    
+  it('should return the average sleep quality of all the users', () => {
+      expect(sleepRepo.returnAveAllUserSleepQuality()).to.equal(41.300000000000004);
+    });
 
 });
