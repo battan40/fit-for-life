@@ -110,6 +110,8 @@ describe ('Activity', () => {
 
   it.only('Should check if user achieved step goal on given date', () => {
     expect(activity.AchieveGoal(1, "2019/06/22")).to.equal(false)
+    expect(activity.AchieveGoal(2, "2019/06/20")).to.equal(false)
+
   })
 
 });
