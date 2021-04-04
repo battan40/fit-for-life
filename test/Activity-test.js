@@ -142,8 +142,7 @@ describe ('Activity', () => {
     numSteps: 13928,
     minutesActive: 218,
     flightsOfStairs: 21
-  }
-]);
+  }]);
     expect(activity.ExceededGoal(2)).to.deep.equal([
   {
     userID: 2,
@@ -172,8 +171,7 @@ describe ('Activity', () => {
     numSteps: 10225,
     minutesActive: 174,
     flightsOfStairs: 26
-  }
-]);
+  }]);
   })
 
 });
