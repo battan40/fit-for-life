@@ -15,6 +15,7 @@ class Activity {
   }
 
   findUserStride(userID) {
+    console.log(this.findUserActivity(userID), '<<<find user activity')
     const userInfo = userData.find(user => user.id === userID)
     const userStrideLength = userInfo.strideLength
     return userStrideLength;
