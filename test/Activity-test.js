@@ -108,14 +108,72 @@ describe ('Activity', () => {
     expect(activity.minutesActiveAverageOnWeek(2, "2019/06/21")).to.equal(24.857142857142858);
   });
 
-  it.only('Should check if user achieved step goal on given date', () => {
+  it('Should check if user achieved step goal on given date', () => {
     expect(activity.AchieveGoal(1, "2019/06/22")).to.equal(true);
     expect(activity.AchieveGoal(2, "2019/06/18")).to.equal(false);
   });
 
   it.only('Should check if user exceeded step goal in dates logged', () => {
-    expect(activity.ExceededGoal(1)).to.equal();
-    expect(activity.ExceededGoal(2)).to.equal();
+    expect(activity.ExceededGoal(1)).to.deep.equal([
+  {
+    userID: 1,
+    date: '2019/06/17',
+    numSteps: 14329,
+    minutesActive: 168,
+    flightsOfStairs: 18
+  },
+  {
+    userID: 1,
+    date: '2019/06/20',
+    numSteps: 14478,
+    minutesActive: 140,
+    flightsOfStairs: 12
+  },
+  {
+    userID: 1,
+    date: '2019/06/22',
+    numSteps: 10289,
+    minutesActive: 119,
+    flightsOfStairs: 6
+  },
+  {
+    userID: 1,
+    date: '2019/06/23',
+    numSteps: 13928,
+    minutesActive: 218,
+    flightsOfStairs: 21
+  }
+]);
+    expect(activity.ExceededGoal(2)).to.deep.equal([
+  {
+    userID: 2,
+    date: '2019/06/17',
+    numSteps: 13750,
+    minutesActive: 65,
+    flightsOfStairs: 4
+  },
+  {
+    userID: 2,
+    date: '2019/06/19',
+    numSteps: 9858,
+    minutesActive: 243,
+    flightsOfStairs: 44
+  },
+  {
+    userID: 2,
+    date: '2019/06/20',
+    numSteps: 8153,
+    minutesActive: 74,
+    flightsOfStairs: 10
+  },
+  {
+    userID: 2,
+    date: '2019/06/21',
+    numSteps: 10225,
+    minutesActive: 174,
+    flightsOfStairs: 26
+  }
+]);
   })
 
 });
