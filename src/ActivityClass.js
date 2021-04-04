@@ -2,23 +2,31 @@ if (typeof require !== 'undefined') {
   var moment = require('../src/Moment');
 }
 
+const userData = require('../data/users.js');
+
+
 class Activity {
   constructor(activityData){
     this.activityData = activityData;
   }
 
-  findUserByID(userID) {
-    return this.activityData.filter(user => {
-    return  user.userID === userID
-    })
+  findUserActivityByID(userID) {
+    return this.activityData.filter(user =>  user.userID === userID)
+  }
+
+  findUserStride(userID) {
+    const userStrides = userData.map(user =>  user.strideLength)
+    console.log(userStrides)
+    // return userData.filter(user => {
+    //   return user.userID === userID;
+    // })
   }
 
   milesWalkedOnDay(userID, specificDate) {
-    const user = 
-    const userStepData = this.findUserByID(userID);
+    const user = this.findUserStride(userID);
+    const userStepData = this.findUserActivityByID(userID);
     const date = userStepData.find(day => day.date === specificDate)
     const strideToMile = 5280 / userStepData;
-    console.log(strideToMile)
   }
 
 };
