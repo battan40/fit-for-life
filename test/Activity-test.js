@@ -106,12 +106,13 @@ describe ('Activity', () => {
   it('should calculate minutes active for given week', () => {
     expect(activity.minutesActiveAverageOnWeek(1, "2019/06/22")).to.equal(17);
     expect(activity.minutesActiveAverageOnWeek(2, "2019/06/21")).to.equal(24.857142857142858)
-  })
+  });
 
   it.only('Should check if user achieved step goal on given date', () => {
     expect(activity.AchieveGoal(1, "2019/06/22")).to.equal(true)
     expect(activity.AchieveGoal(2, "2019/06/18")).to.equal(false)
+  });
 
-  })
+  
 
 });
