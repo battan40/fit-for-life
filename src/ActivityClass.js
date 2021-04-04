@@ -55,12 +55,16 @@ class Activity {
     return userInfo.dailyStepGoal <= StepDataOnDate.numSteps;
   }
 
-  ExceededGoal(userID) {
+  exceededGoal(userID) {
     const userInfo = userData.find(user => user.id === userID)
     const userStepData = this.findUserActivity(userID);
     const exceededGoalDates = userStepData.filter(date => date.numSteps > userInfo.dailyStepGoal);
     console.log(exceededGoalDates);
     return exceededGoalDates;
+  }
+
+  allTimeStairClimb() {
+    
   }
 
 };

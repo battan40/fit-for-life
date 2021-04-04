@@ -114,7 +114,7 @@ describe ('Activity', () => {
   });
 
   it.only('Should check if user exceeded step goal in dates logged', () => {
-    expect(activity.ExceededGoal(1)).to.deep.equal([
+    expect(activity.exceededGoal(1)).to.deep.equal([
   {
     userID: 1,
     date: '2019/06/17',
