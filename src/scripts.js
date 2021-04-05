@@ -1,4 +1,5 @@
 let currentUser;
+let currentDate = moment(new Date("2019/09/22")).format('YYYY/MM/DD')
 const allUsers = new UserRepo(userData);
 const hydration = new Hydration(hydrationData);
 const displayUser = document.querySelector('#displayUser');
@@ -14,7 +15,7 @@ window.addEventListener('load', onPageLoad);
 function onPageLoad() {
   getMainUser();
   getFriends();
-  getMainUserHydration(currentUser, "2019/09/22");
+  getMainUserHydration(currentUser, currentDate);
   displayAllAverageSteps();
   displayUserAverageSteps();
 };
@@ -35,6 +36,11 @@ function getMainUserHydration(user, date) {
   userWeeklyHydration.innerText = ` Weeks water intake: ${weekSum} oz this week!`;
 };
 
+function displayUserAverageSteps() {
+  const userStepGoal = document.querySelector('#userStepGoal');
+  userStepGoal.innerText = `${currentUser.name}'s Daily Step Average: ${currentUser.dailyStepGoal}`;
+};
+
 function getFriends() {
   currentUser.friends.forEach(friend => {
     const foundFriend = userData.find(person => friend === person.id);
@@ -44,11 +50,6 @@ function getFriends() {
     </article>`
     friendsContainer.insertAdjacentHTML('beforeend', displayFriendData);
   });
-};
-
-function displayUserAverageSteps() {
-  const userStepGoal = document.querySelector('#userStepGoal');
-  userStepGoal.innerText = `${currentUser.name}'s Daily Step Average: ${currentUser.dailyStepGoal}`;
 };
 
 function displayAllAverageSteps() {
