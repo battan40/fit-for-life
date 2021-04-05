@@ -64,24 +64,18 @@ class Activity {
 
   allTimeStairClimb(userID) {
     const userStepData = this.findUserActivity(userID);
-    // console.log(userStepData, '<<<< userStepData');
-    const allTimeRecord = userStepData.reduce((paramA, ParamB) => {
-      paramA < ParamB.flightsOfStairs
-      return ParamB}, {})
-      console.log(userStepData)
+    const allTimeRecord = userStepData.reduce((acc, curr) => {
+      if (acc.flightsOfStairs > curr.flightsOfStairs) {
+        return acc;
+      } else {
+        return curr;
+      }
+    })
     return `All time record is ${allTimeRecord.flightsOfStairs} flights of stairs, on ${allTimeRecord.date}!`;
   }
 
 };
 
-
-// calculateHydrationAllTime(userID) {
-//   const userHydrationData = this.findUserById(userID);
-//   const allOuncesDrank = userHydrationData.reduce((beginningOunces, drinker) => {
-//     return beginningOunces + drinker.numOunces;
-//   }, 0);
-//     return allOuncesDrank / userHydrationData.length;
-// };
 
 
 
