@@ -113,7 +113,7 @@ describe ('Activity', () => {
     expect(activity.AchieveGoal(2, "2019/06/18")).to.equal(false);
   });
 
-  it.only('Should check if user exceeded step goal in dates logged', () => {
+  it('Should check if user exceeded step goal in dates logged', () => {
     expect(activity.exceededGoal(1)).to.deep.equal([
   {
     userID: 1,
@@ -172,6 +172,12 @@ describe ('Activity', () => {
     minutesActive: 174,
     flightsOfStairs: 26
   }]);
+  })
+
+  it.only('should recall user\'s all time stair climb record', () => {
+    expect(activity.allTimeStairClimb(1)).to.equal(`All time record is 36 flights of stairs, on 2019/06/16!`);
+    expect(activity.allTimeStairClimb(2)).to.equal(`All time record is 44 flights of stairs, on 2019/06/19!`)
+
   })
 
 });

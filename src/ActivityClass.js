@@ -59,29 +59,32 @@ class Activity {
     const userInfo = userData.find(user => user.id === userID)
     const userStepData = this.findUserActivity(userID);
     const exceededGoalDates = userStepData.filter(date => date.numSteps > userInfo.dailyStepGoal);
-    console.log(exceededGoalDates);
     return exceededGoalDates;
   }
 
-  allTimeStairClimb() {
-    
+  allTimeStairClimb(userID) {
+    const userStepData = this.findUserActivity(userID);
+    // console.log(userStepData, '<<<< userStepData');
+    const allTimeRecord = userStepData.reduce((paramA, ParamB) => {
+      paramA < ParamB.flightsOfStairs
+      return ParamB}, {})
+      console.log(userStepData)
+    return `All time record is ${allTimeRecord.flightsOfStairs} flights of stairs, on ${allTimeRecord.date}!`;
   }
 
 };
 
+
+// calculateHydrationAllTime(userID) {
+//   const userHydrationData = this.findUserById(userID);
+//   const allOuncesDrank = userHydrationData.reduce((beginningOunces, drinker) => {
+//     return beginningOunces + drinker.numOunces;
+//   }, 0);
+//     return allOuncesDrank / userHydrationData.length;
+// };
 
 
 
 if (typeof module !== 'undefined') {
   module.exports = Activity;
 };
-
-
-// calculateWeeksHydration(userID, endDate) {
-//   const userHydrationData = this.findUserById(userID);
-//   const begDate = moment(new Date(endDate)).subtract(6, 'days').format('YYYY/MM/DD');
-//   const weekHydration = userHydrationData.filter(week => {
-//     return week.date >= begDate && week.date <= endDate
-//   });
-//   return weekHydration.map(weekOunces => weekOunces.numOunces);
-// };
