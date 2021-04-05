@@ -10,8 +10,8 @@ class SleepRepo {
   findSleepDataById(id) {
     return this.sleepData.filter(user => {
     return  user.userID === id;
-    })
-  }
+    });
+  };
 
   returnAveAllUserSleepQuality() {
     const usersIdList = []
@@ -44,7 +44,7 @@ class SleepRepo {
         userID: user,
         sleepQuality: Math.round((allSleepTotals / qualitySleepers[user].length) * 10) / 10
       }
-    })
+    });
   };
 
   findQualityThreeSleep(endDate) {
