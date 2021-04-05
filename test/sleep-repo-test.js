@@ -51,4 +51,9 @@ describe ('Sleep', () => {
   it('should return users that had sleep quality rating of above 3', () => {
     expect(sleepRepo.findQualityThreeSleep("2019/06/21")).to.deep.equal([ { userID: '1', sleepQuality: 3.4 } ])
   });
+
+  it('should for a given day, by the date, find the users who slept the most number of hours, even if there is a tie', () => {
+    expect(sleepRepo.bestSleepersByDate("2019/06/17")).to.deep.equal(
+  {userID: 1, date: '2019/06/17', hoursSlept: 10.8, sleepQuality: 4.7})
+  });
 });

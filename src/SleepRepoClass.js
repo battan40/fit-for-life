@@ -56,6 +56,21 @@ class SleepRepo {
     const averageSleepers = this.findAverageAllUserSleepQuality(qualitySleepers);
     return averageSleepers.filter(user => user.sleepQuality > 3.0)
   };
+
+  bestSleepersByDate(date) {
+    const sleepersByDate = this.sleepData.filter(sleepers => {
+      return sleepers.date === date;
+    });
+    const mostHoursSlept = sleepersByDate.reduce((user1, user2) => {
+      if (user1.hoursSlept > user2.hoursSlept) {
+        return user1;
+      } else if (user1.hoursSlept === user2.hoursSlept){
+
+        return user2, user1;
+      };
+    });
+      return mostHoursSlept;
+  };
 };
 
 if (typeof module !== 'undefined') {
