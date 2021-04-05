@@ -9,6 +9,7 @@ const stridelength = document.getElementById('stridelength');
 const emailDisplay = document.getElementById('emailDisplay');
 const userHydrationDisplay = document.getElementById('userHydrationDisplay');
 const userWeeklyHydration = document.getElementById('userWeeklyHydration');
+const sleepStatMainUser = document.querySelector('#mainUserSleepStat');
 
 window.addEventListener('load', onPageLoad);
 
