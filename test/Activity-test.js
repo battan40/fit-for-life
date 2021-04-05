@@ -176,7 +176,7 @@ describe ('Activity', () => {
 
   it.only('should recall user\'s all time stair climb record', () => {
     expect(activity.allTimeStairClimb(1)).to.equal(`All time record is 36 flights of stairs, on 2019/06/16!`);
-    // expect(activity.allTimeStairClimb(2)).to.equal(`All time record is 44 flights of stairs, on 2019/06/19!`)
+    expect(activity.allTimeStairClimb(2)).to.equal(`All time record is 44 flights of stairs, on 2019/06/19!`)
 
   })
 
