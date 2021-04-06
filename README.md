@@ -1,82 +1,65 @@
-# FitLit Starter Kit
+# FitLit For Life
 
-The details of this project are outline in [this project spec](http://frontend.turing.io/projects/fitlit.html).
+#### The Makings of a Fitness and Quality of Life Tracking App;
+
+*Work on this project has slowed or stopped completely. Deadline 4/6/2021, 9pm MST.*
+
+## Technologies Used
+
+* `javaScript`
+* `HTML`
+* `CSS`
+* `Eslint`
+
+## Goals and Objectives
+
+* Impliment ES6 classes
+* Clean class to class interaction
+* Utilize object and array prototype methods to perform data manipulation
+* Create a dashboard that displays information easily for the user on the DOM
+* Utilize testing suite to verify security of class build out using `TDD`
+* Manipulate and clean up the organization of the data files before they are displayed on the `DOM`
+* Separate testing data files for developer empathy
+
+## Overview
+
+* This project was a little bit of a trojan horse.  We thought we were getting to build an app and its purpose was to teach data manipulation.  Robust testing should allow for errorless class to class interaction and subsequently easier code to write when finally manipulating the `DOM`.
 
 ## Setup
 
-1. Within your group, decide on one person to have the project repository (repo) on their GitHub account. Then, that person should fork this repo - on the top right corner of this page, click the **Fork** button.
-1. Both memebers of the group should clone down the _forked_ repo. Since you don't want to name your project "activity-tracker-starter", you can use an optional argument when you run git clone (you replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
-1. Run `open src/index.html` in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page)
-1. Make sure both members of your team are collaborators on the forked repo.
+* Clone this repo to your local computer
+* To review code open your text editor
+* Read the whole README.md
+* To view the data presentation on the `DOM` run the command `open src/index.html`
 
-## Testing
+## Project Link
 
-There is no boilerplate for testing in this starter-kit repo. You will need to set this up yourself. However, if you ran `npm install`, then the tooling you need to start testing is already installed (`mocha` and `chai`).
+* [Repo](https://github.com/battan40/fit-for-life)
 
-## Linting Your Code
+## Contributors
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit, but that's ok - the linter is still running successfully.
+* [Pat Findley](https://github.com/Patfindley)
+* [Angela Battillo](https://github.com/battan40)
 
-Your linter will look only at the JavaScript files you have within the `src` and the `test` directories.
+## Functionality Goals
 
-## Data Model
+* With `mocha` and `chai`tooling in place set up a robust test suite to verify class properties and methods are sound and reinforce `TDD`
+* `javaScript` syntax is *DRY*, *MODULAR*, and as often as possible holds to the *SRP*
+* Testing suite uses its own testing data and has happy and sad path testing
+* Each completed iteration should populate on the `DOM` with no bugs, crashes or missing functionality
 
-**Users**
+## Road Map
 
-```
-[
-  {
-    "id": [number],
-    "name": [string],
-    "address": [string],
-    "email": [string],
-    "strideLength": [number - feet],
-    "dailyStepGoal": [number - steps],
-    "friends": [array - one-way connection to other user(s)]
-  },
-  ...more user data
-]
-```
+##### Future Iterations should include:
 
-**Activity**
+* A log in page
+* The privacy to protect a user that wanted to store more of their personal information on the app
+*We respectfully disagree with placing the users address on display on the app, the email is already a degree of security risk*
+* `CSS` stylings to enhance the user experience
+  * An interactive progress wheel and corresponding
+* Error handling that pops up with helpful hints when a user has run into commonly experienced issues
+* An Admin-View; This way trends from all the stats of all the users can be threaded for community or overall UX improvement
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numSteps": [number - steps],
-    "minutesActive": [number - minutes],
-    "flightsOfStairs": [number - flights]
-  },
-  ...more activity data
-]
-```
+## Preview
 
-**Hydration**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numOunces": [number - ounces]
-  },
-  ...more hydration data
-]
-```
-
-**Sleep**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "hoursSlept": [number - hours],
-    "sleepQuality": [number - unitless]
-  },
-  ...more sleep data
-]
-```
+![A Glance Ahead]()
