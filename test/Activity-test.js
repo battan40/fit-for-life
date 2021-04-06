@@ -44,17 +44,20 @@ describe ('Activity', () => {
      expect(activity.milesWalkedOnDay(user2, "2019/06/18")).to.equal(4);
    });
 
+   it.only('should count user steps on specific day', () => {
+     expect(activity.stepsOnDate(1, "2019/06/22")).to.equal(10289);
+     expect(activity.stepsOnDate(2, "2019/06/22")).to.equal(3605);
+   });
+
    it('Should check if user achieved step goal on given date', () => {
      expect(activity.AchieveGoal(user1, "2019/06/22")).to.equal(true);
      expect(activity.AchieveGoal(user2, "2019/06/18")).to.equal(false);
    });
 
-
-  it('should find how many minutes user was active for on date', () => {
-    expect(activity.minutesActiveOnDay(1, "2019/06/16")).to.equal(175);
-    expect(activity.minutesActiveOnDay(2, "2019/06/20")).to.equal(74);
-  });
-
+   it('should find how many minutes user was active for on date', () => {
+     expect(activity.minutesActiveOnDay(1, "2019/06/16")).to.equal(175);
+     expect(activity.minutesActiveOnDay(2, "2019/06/20")).to.equal(74);
+   });
 
   it('should calculate minutes active for given week', () => {
     expect(activity.minutesActiveAverageOnWeek(1, "2019/06/22")).to.equal(17);
@@ -122,7 +125,7 @@ describe ('Activity', () => {
   }]);
   })
 
-  it.only('should recall user\'s all time stair climb record', () => {
+  it('should recall user\'s all time stair climb record', () => {
     expect(activity.allTimeStairClimb(1)).to.equal(`All time record is 36 flights of stairs, on 2019/06/16!`);
     expect(activity.allTimeStairClimb(2)).to.equal(`All time record is 44 flights of stairs, on 2019/06/19!`)
 
