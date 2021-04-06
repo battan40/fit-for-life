@@ -11,6 +11,7 @@
   flex-direction: column;
   color: #BFC1C5;
   background-color: #242938;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* ******** top container ******** */
@@ -31,24 +32,19 @@
 }
 
 .title {
-  margin-top: 8%;
+  margin-top: 3%;
   padding: 5%;
 }
 
-.user-info {
+.prog-rings {
   display: flex;
-  padding: 3%;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  width: 100vh;
+  justify-content: space-between;
 }
 
 .user-stats {
   border: 2px #34E4C7 solid;
-}
-
-.sleep {
-  display:flex;
-  flex-direction: row-reverse;
+  height: 30vh;
 }
 
 /* ******* friends container ******* */
@@ -79,6 +75,7 @@
 
 .user-graph {
   border: 2px #34E4C7 solid;
+  width: 20vw;
 }
 
 @media only screen and (max-device-width: 812px) /*<<< swap this so desktop is at bottom */
@@ -90,19 +87,11 @@
 
   /* ******** top container ******** */
 
-  .main {
-    /* height: 100vh; */
-  }
-
   .top-article {
     justify-content: space-around;
   }
 
-  .user-info {
-    width: 45vh;
-  }
-
-  .stats-container {
+  .stats-container1 {
     display: flex;
     flex-direction: column;
     margin: 0 0 25% 65%;

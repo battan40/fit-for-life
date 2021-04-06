@@ -12,6 +12,8 @@ const sleepStatMainUser = document.querySelector('#mainUserSleepStat');
 const userWeeklySleep = document.getElementById('userWeeklySleep');
 const userSleepAvg = document.getElementById('userSleepAvg');
 const userStepsDisplay = document.getElementById('userStepsDisplay');
+const minutesActive = document.getElementById('minutesActive');
+const milesWalked = document.getElementById('milesWalked');
 
 window.addEventListener('load', onPageLoad);
 
@@ -50,7 +52,9 @@ function getMainUserSleep(user, date) {
 
 function getMainUserActivity(user, date) {
   const activity = new Activity(activityData);
-  userStepsDisplay.innerText = `${activity.numSteps} Steps Today!`
+  userStepsDisplay.innerText = `${activity.stepsOnDate(user.id, date)} Steps Today!`
+  minutesActive.innerText = `${activity.minutesActiveOnDay(user.id, date)} minutes active today!`
+  milesWalked.innerText = `${activity.milesWalkedOnDay(user.id, date)} miles walked today!`
 
 };
 
