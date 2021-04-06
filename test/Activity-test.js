@@ -39,17 +39,17 @@ describe ('Activity', () => {
    {userID: 1, date: '2019/06/23', numSteps: 13928, minutesActive: 218, flightsOfStairs: 21}]);
    });
 
-   it('should calculate miles walked on a single day for user', () => {
+  it('should calculate miles walked on a single day for user', () => {
      expect(activity.milesWalkedOnDay(user1, "2019/06/16")).to.equal( 5.4);
      expect(activity.milesWalkedOnDay(user2, "2019/06/18")).to.equal(4);
    });
 
-   it('should count user steps on specific day', () => {
+  it('should count user steps on specific day', () => {
      expect(activity.stepsOnDate(1, "2019/06/22")).to.equal(10289);
      expect(activity.stepsOnDate(2, "2019/06/22")).to.equal(3605);
    });
 
-   it('should find how many minutes user was active for on date', () => {
+  it('should find how many minutes user was active for on date', () => {
      expect(activity.minutesActiveOnDay(1, "2019/06/16")).to.equal(175);
      expect(activity.minutesActiveOnDay(2, "2019/06/20")).to.equal(74);
    });
@@ -77,10 +77,8 @@ describe ('Activity', () => {
   {userID: 2, date: '2019/06/21', numSteps: 10225, minutesActive: 174, flightsOfStairs: 26}]);
  });
 
-
   it('should recall user\'s all time stair climb record', () => {
     expect(activity.allTimeStairClimb(1)).to.equal(`All time record is 36 flights of stairs, on 2019/06/16!`);
     expect(activity.allTimeStairClimb(2)).to.equal(`All time record is 44 flights of stairs, on 2019/06/19!`)
   });
-
 });
