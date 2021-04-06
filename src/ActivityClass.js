@@ -44,19 +44,17 @@ class Activity {
     return minutesActive / weekActive.length
   }
 
-  AchieveGoal(userID, specificDate) {
-    const userInfo = userData.find(user => user.id === userID)
-    const userStepData = this.findUserActivity(userID);
-    const StepDataOnDate = userStepData.find(day => day.date === specificDate)
-    return userInfo.dailyStepGoal <= StepDataOnDate.numSteps;
+  AchieveGoal(user, specificDate) {
+    const userStepData = this.findUserActivity(user.id)
+    const stepDataOnDate = userStepData.find(day => day.date === specificDate)
+    return user.dailyStepGoal <= stepDataOnDate.numSteps;
   }
 
-  exceededGoal(userID) {
-    const userInfo = userData.find(user => user.id === userID)
-    const userStepData = this.findUserActivity(userID);
-    const exceededGoalDates = userStepData.filter(date => date.numSteps > userInfo.dailyStepGoal);
-    return exceededGoalDates;
-  }
+
+  exceededGoal(user) {
+    const userStepData = this.findUserActivity(user.id);
+    return userStepData.filter(date => date.numSteps > user.dailyStepGoal);
+    }
 
   allTimeStairClimb(userID) {
     const userStepData = this.findUserActivity(userID);
