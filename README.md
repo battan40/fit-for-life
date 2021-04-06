@@ -23,3 +23,19 @@
 ## Overview
 
 * This project was a little bit of a trojan horse.  We thought we were getting to build an app and its purpose was to teach data manipulation.  Robust testing should allow for errorless class to class interaction and subsequently easier code to write when finally manipulating the `DOM`.
+
+## Setup
+
+* Clone this repo to your local computer
+* To review code open your text editor
+* Read the whole README.md
+* To view the data presentation on the `DOM` run the command `open src/index.html`
+
+## Project Link
+
+* [Repo](https://github.com/battan40/fit-for-life)
+
+## Contributors
+
+* [Pat Findley](https://github.com/Patfindley)
+* [Angela Battillo](https://github.com/battan40)
