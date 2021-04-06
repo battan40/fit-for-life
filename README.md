@@ -58,3 +58,7 @@
   * An interactive progress wheel and corresponding
 * Error handling that pops up with helpful hints when a user has run into commonly experienced issues
 * An Admin-View; This way trends from all the stats of all the users can be threaded for community or overall UX improvement
+
+## Preview
+
+![A Glance Ahead]()
