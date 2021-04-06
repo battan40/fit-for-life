@@ -81,7 +81,7 @@
   border: 2px #34E4C7 solid;
 }
 
-@media only screen and (max-device-width: 812px)
+@media only screen and (max-device-width: 812px) /*<<< swap this so desktop is at bottom */
 {
 
   * {

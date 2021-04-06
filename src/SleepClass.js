@@ -10,6 +10,7 @@ class Sleep {
   filterUserById(id) {
     return this.sleepData.filter(user => {
     return  user.userID === id;
+
     })
   };
 
