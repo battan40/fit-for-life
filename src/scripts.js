@@ -1,7 +1,6 @@
 let currentUser;
-let currentDate = moment(new Date("2019/09/22")).format('YYYY/MM/DD')
+let currentDate = moment(new Date("2019/09/22")).format('YYYY/MM/DD');
 const allUsers = new UserRepo(userData);
-const hydration = new Hydration(hydrationData);
 const displayUser = document.querySelector('#displayUser');
 const userStepGoal = document.querySelector('#stepGoal');
 const friendsContainer = document.querySelector('#friendContainer');
@@ -19,6 +18,7 @@ function onPageLoad() {
   getMainUserHydration(currentUser, currentDate);
   displayAllAverageSteps();
   displayUserAverageSteps();
+  getMainUserSleep(currentUser, currentDate);
 };
 
 function getMainUser() {
@@ -36,6 +36,17 @@ function getMainUserHydration(user, date) {
   userHydrationDisplay.innerText = ` hydration: ${hydration.singleDayHydration(user.id, date)} Oz Today!`;
   userWeeklyHydration.innerText = ` Weeks water intake: ${weekSum} oz this week!`;
 };
+
+function getMainUserSleep(user, date) {
+  const sleep = new Sleep(sleepData);
+  sleepStatMainUser.innerText = `sleep: ${sleep.hoursSleptOneUser(user.id, date)}, quality: ${sleep.sleepQualityOneUser(user.id, date)}`;
+  //hours of sleep & quality for latest day
+  // sleep data for week
+  //all time avg sleep quality
+  //all avg number of hours slept
+
+};
+
 
 function displayUserAverageSteps() {
   const userStepGoal = document.querySelector('#userStepGoal');
