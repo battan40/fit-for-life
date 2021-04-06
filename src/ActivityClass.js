@@ -11,19 +11,12 @@ class Activity {
     return this.activityData.filter(user =>  user.userID === userID)
   }
 
-  findUserStride(userID) {
-    const userInfo = userData.find(user => user.id === userID)
-    const userStrideLength = userInfo.strideLength
-    return userStrideLength;
-  }
-
-  milesWalkedOnDay(userID, specificDate) {
-    const userStepData = this.findUserActivity(userID);
-    const StepDataOnDate = userStepData.find(day => day.date === specificDate)
-    const strideToMile = 5280 / this.findUserStride(userID)
-    const milesWalked = StepDataOnDate.numSteps / strideToMile;
-    return milesWalked
-  }
+  milesWalkedOnDay(user, specificDate) {
+     const userStepData = this.findUserActivity(user.id);
+     const stepDataOnDate = userStepData.find(day => day.date === specificDate)
+     const strideToMile = 5280 / user.strideLength
+     return Math.round((stepDataOnDate.numSteps / strideToMile) * 10) / 10 ;
+   }
 
   stepsOnDate(userID, specificDate) {
     const userStepData = this.findUserActivity(userID);
