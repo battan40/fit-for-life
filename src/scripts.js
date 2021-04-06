@@ -1,7 +1,6 @@
 let currentUser;
-let currentDate = moment(new Date("2019/09/22")).format('YYYY/MM/DD')
+let currentDate = moment(new Date("2019/09/22")).format('YYYY/MM/DD');
 const allUsers = new UserRepo(userData);
-const hydration = new Hydration(hydrationData);
 const displayUser = document.querySelector('#displayUser');
 const userStepGoal = document.querySelector('#stepGoal');
 const friendsContainer = document.querySelector('#friendContainer');
@@ -10,6 +9,9 @@ const emailDisplay = document.getElementById('emailDisplay');
 const userHydrationDisplay = document.getElementById('userHydrationDisplay');
 const userWeeklyHydration = document.getElementById('userWeeklyHydration');
 const sleepStatMainUser = document.querySelector('#mainUserSleepStat');
+const userWeeklySleep = document.getElementById('userWeeklySleep');
+const userSleepAvg = document.getElementById('userSleepAvg');
+const userStepsDisplay = document.getElementById('userStepsDisplay');
 
 window.addEventListener('load', onPageLoad);
 
@@ -19,6 +21,8 @@ function onPageLoad() {
   getMainUserHydration(currentUser, currentDate);
   displayAllAverageSteps();
   displayUserAverageSteps();
+  getMainUserSleep(currentUser, currentDate);
+  getMainUserActivity(currentUser, currentDate);
 };
 
 function getMainUser() {
@@ -35,6 +39,19 @@ function getMainUserHydration(user, date) {
   const weekSum = weekTotal.reduce((paramA, paramB) => {return paramA + paramB;},0);
   userHydrationDisplay.innerText = ` hydration: ${hydration.singleDayHydration(user.id, date)} Oz Today!`;
   userWeeklyHydration.innerText = ` Weeks water intake: ${weekSum} oz this week!`;
+};
+
+function getMainUserSleep(user, date) {
+  const sleep = new Sleep(sleepData);
+  sleepStatMainUser.innerText = `sleep: ${sleep.hoursSleptOneUser(user.id, date)}, quality: ${sleep.sleepQualityOneUser(user.id, date)}`;
+  userWeeklySleep.innerText = ` Hours slept this week: ${sleep.calculateWeeklySleepQuality(user.id, date)} `
+  userSleepAvg.innerText = ` Average Sleep Quality: ${Math.round(sleep.returnAveUserSleepQualityAllTime(user.id))}, Average Hours: ${sleep.aveUserHoursSleptAllTime(user.id)}`
+};
+
+function getMainUserActivity(user, date) {
+  const activity = new Activity(activityData);
+  userStepsDisplay.innerText = `${activity.numSteps} Steps Today!`
+
 };
 
 function displayUserAverageSteps() {

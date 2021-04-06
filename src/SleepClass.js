@@ -10,7 +10,6 @@ class Sleep {
   filterUserById(id) {
     return this.sleepData.filter(user => {
     return  user.userID === id;
-
     })
   };
 
@@ -48,7 +47,7 @@ class Sleep {
       const weekSleepHours = userSleepData.filter(week => {
         return week.date >= begDate && week.date <= endDate
       });
-      return weekSleepHours.map(weekHours => weekHours.hoursSlept);
+        return weekSleepHours.map(weekHours => weekHours.hoursSlept);
   };
 
   calculateWeeklySleepQuality(id, endDate) {
@@ -57,7 +56,7 @@ class Sleep {
     const weekSleepQuality = userSleepData.filter(week => {
       return week.date >= begDate && week.date <= endDate
     });
-    return weekSleepQuality.map(weekQuality => weekQuality.sleepQuality);
+      return weekSleepQuality.map(weekQuality => weekQuality.sleepQuality);
   };
 };
 
