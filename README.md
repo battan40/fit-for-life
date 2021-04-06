@@ -46,3 +46,15 @@
 * `javaScript` syntax is *DRY*, *MODULAR*, and as often as possible holds to the *SRP*
 * Testing suite uses its own testing data and has happy and sad path testing
 * Each completed iteration should populate on the `DOM` with no bugs, crashes or missing functionality
+
+## Road Map
+
+##### Future Iterations should include:
+
+* A log in page
+* The privacy to protect a user that wanted to store more of their personal information on the app
+*We respectfully disagree with placing the users address on display on the app, the email is already a degree of security risk*
+* `CSS` stylings to enhance the user experience
+  * An interactive progress wheel and corresponding
+* Error handling that pops up with helpful hints when a user has run into commonly experienced issues
+* An Admin-View; This way trends from all the stats of all the users can be threaded for community or overall UX improvement
