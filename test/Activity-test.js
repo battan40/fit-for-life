@@ -39,8 +39,9 @@ describe ('Activity', () => {
    {userID: 1, date: '2019/06/23', numSteps: 13928, minutesActive: 218, flightsOfStairs: 21}]);
    });
 
-  it('should calculate miles walked on a single day for user', () => {
+  it.only('should calculate miles walked on a single day for user', () => {
      expect(activity.milesWalkedOnDay(user1, "2019/06/16")).to.equal( 5.4);
+     console.log(user1)
      expect(activity.milesWalkedOnDay(user2, "2019/06/18")).to.equal(4);
    });
 

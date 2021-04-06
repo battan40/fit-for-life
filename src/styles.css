@@ -32,7 +32,7 @@
 }
 
 .title {
-  margin-top: 8%;
+  margin-top: 3%;
   padding: 5%;
 }
 
@@ -45,11 +45,6 @@
 .user-stats {
   border: 2px #34E4C7 solid;
   height: 30vh;
-}
-
-.sleep {
-  display:flex;
-  flex-direction: row-reverse;
 }
 
 /* ******* friends container ******* */
