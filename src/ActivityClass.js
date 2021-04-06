@@ -44,7 +44,7 @@ class Activity {
     return minutesActive / weekActive.length
   }
 
-  AchieveGoal(user, specificDate) {
+  achieveGoal(user, specificDate) {
     const userStepData = this.findUserActivity(user.id)
     const stepDataOnDate = userStepData.find(day => day.date === specificDate)
     return user.dailyStepGoal <= stepDataOnDate.numSteps;

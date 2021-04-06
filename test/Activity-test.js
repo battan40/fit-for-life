@@ -60,8 +60,8 @@ describe ('Activity', () => {
   });
 
   it('Should check if user achieved step goal on given date', () => {
-    expect(activity.AchieveGoal(user1, "2019/06/22")).to.equal(true);
-    expect(activity.AchieveGoal(user2, "2019/06/18")).to.equal(false);
+    expect(activity.achieveGoal(user1, "2019/06/22")).to.equal(true);
+    expect(activity.achieveGoal(user2, "2019/06/18")).to.equal(false);
   });
 
   it('Should check if user exceeded step goal in dates logged', () => {
