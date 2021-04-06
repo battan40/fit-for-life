@@ -44,20 +44,21 @@ describe ('Activity', () => {
      expect(activity.milesWalkedOnDay(user2, "2019/06/18")).to.equal(4);
    });
 
+   it('Should check if user achieved step goal on given date', () => {
+     expect(activity.AchieveGoal(user1, "2019/06/22")).to.equal(true);
+     expect(activity.AchieveGoal(user2, "2019/06/18")).to.equal(false);
+   });
+
 
   it('should find how many minutes user was active for on date', () => {
     expect(activity.minutesActiveOnDay(1, "2019/06/16")).to.equal(175);
     expect(activity.minutesActiveOnDay(2, "2019/06/20")).to.equal(74);
   });
 
+
   it('should calculate minutes active for given week', () => {
     expect(activity.minutesActiveAverageOnWeek(1, "2019/06/22")).to.equal(17);
     expect(activity.minutesActiveAverageOnWeek(2, "2019/06/21")).to.equal(24.857142857142858);
-  });
-
-  it('Should check if user achieved step goal on given date', () => {
-    expect(activity.AchieveGoal(1, "2019/06/22")).to.equal(true);
-    expect(activity.AchieveGoal(2, "2019/06/18")).to.equal(false);
   });
 
   it('Should check if user exceeded step goal in dates logged', () => {
