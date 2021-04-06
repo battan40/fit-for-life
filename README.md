@@ -39,3 +39,10 @@
 
 * [Pat Findley](https://github.com/Patfindley)
 * [Angela Battillo](https://github.com/battan40)
+
+## Functionality Goals
+
+* With `mocha` and `chai`tooling in place set up a robust test suite to verify class properties and methods are sound and reinforce `TDD`
+* `javaScript` syntax is *DRY*, *MODULAR*, and as often as possible holds to the *SRP*
+* Testing suite uses its own testing data and has happy and sad path testing
+* Each completed iteration should populate on the `DOM` with no bugs, crashes or missing functionality
