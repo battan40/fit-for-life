@@ -24,12 +24,12 @@ class Activity {
      return stepDataOnDate.numSteps;
    }
 
-  minutesActiveOnDay(userID, specificDate) {
-    const userStepData = this.findUserActivity(userID);
-    const StepDataOnDate = userStepData.find(day => day.date === specificDate)
-    const minutesActive = StepDataOnDate.minutesActive;
-    return minutesActive;
-  }
+   minutesActiveOnDay(userID, specificDate) {
+     const userStepData = this.findUserActivity(userID);
+     const stepDataOnDate = userStepData.find(day => day.date === specificDate)
+     const minutesActive = stepDataOnDate.minutesActive;
+     return minutesActive;
+   }
 
   minutesActiveAverageOnWeek(userID, endDate) {
     const userStepData = this.findUserActivity(userID);
