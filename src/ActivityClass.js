@@ -18,12 +18,11 @@ class Activity {
      return Math.round((stepDataOnDate.numSteps / strideToMile) * 10) / 10 ;
    }
 
-  stepsOnDate(userID, specificDate) {
-    const userStepData = this.findUserActivity(userID);
-    const StepDataOnDate = userStepData.find(day => day.date === specificDate)
-    console.log(StepDataOnDate.numSteps, '<<numsteps')
-    return StepDataOnDate.numSteps;
-  }
+   stepsOnDate(userID, specificDate) {
+     const userStepData = this.findUserActivity(userID);
+     const stepDataOnDate = userStepData.find(day => day.date === specificDate)
+     return stepDataOnDate.numSteps;
+   }
 
   minutesActiveOnDay(userID, specificDate) {
     const userStepData = this.findUserActivity(userID);
