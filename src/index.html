@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8"name="viewport" content="width=device-width, initial-scale=1">
     <title>Activity Tracker</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
@@ -15,15 +17,24 @@
             <h2 class="user-name" id="displayUser" placeholder="user-name">user name</h2>
             <h2 class="step-goal" id="stepGoal" placeholder="step goal">step goal</h2>
           </section>
-          <section class="user-stride">
-            <h3 class="stride-length" id="stridelength" placeholder="stride length">stride length</h3>
+          <section class="prog-rings">
+            <div>
+              <svg class="user-stats"></svg>
+              <div class="stats-container1">
+                <h3 class="sleep" id="mainUserSleepStat">sleep</h3>
+                <h3 class="hydration" id="userHydrationDisplay" placeholder="hydration">hydration</h3>
+                <h3 class="user-weekly-hydration hidden" placeholder="userWeeklyHydration">Weekly Water</h3>
+              </div>
+            </div>
+            <div>
+              <svg class="user-stats"></svg>
+              <div class="stats-container2">
+                <h3 class="steps" placeholder="steps">steps</h3>
+                <h3 class="stride-length" id="stridelength" placeholder="stride length">stride length</h3>
+                <h3 class="fill-me" id="fill-me" placeholder="hydration">fill me</h3>
+              </div>
+            </div>
           </section>
-          <svg class="user-stats"></svg>
-          <div class="stats-container">
-            <h3 class="sleep" id="mainUserSleepStat">sleep</h3>
-            <h3 class="hydration" id="userHydrationDisplay" placeholder="hydration">hydration</h3>
-            <h3 class="steps" placeholder="steps">steps</h3>
-          </div>
         </article>
       </section>
       <section class="friend-container" id="friendContainer">
@@ -40,8 +51,8 @@
           <article class="water-graph-container">
             <svg class="user-graph"></svg>
           </article>
-          <h2 class="user-ounces-goal" id="userHydrationGoal">Todays Water Consumption<h2>
-          <h2 class="user-weekly-hydration hidden" id="userWeeklyHydration">Weekly Water</h2>
+          <h2 class="fill-me" id="fillMe">fill me<h2>
+          <h2 class="fill-me" id="fillMe">fill me</h2>
         </section>
         <section class="sleep-section">
           <article class="sleep-graph-container">

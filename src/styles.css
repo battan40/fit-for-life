@@ -11,6 +11,7 @@
   flex-direction: column;
   color: #BFC1C5;
   background-color: #242938;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* ******** top container ******** */
@@ -35,11 +36,8 @@
   padding: 5%;
 }
 
-.user-info {
+.prog-rings {
   display: flex;
-  padding: 3%;
-  justify-content: space-around;
-  flex-wrap: wrap;
 }
 
 .user-stats {
@@ -90,19 +88,11 @@
 
   /* ******** top container ******** */
 
-  .main {
-    /* height: 100vh; */
-  }
-
   .top-article {
     justify-content: space-around;
   }
 
-  .user-info {
-    width: 45vh;
-  }
-
-  .stats-container {
+  .stats-container1 {
     display: flex;
     flex-direction: column;
     margin: 0 0 25% 65%;
