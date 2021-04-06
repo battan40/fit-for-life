@@ -44,13 +44,7 @@ function getMainUserSleep(user, date) {
   const sleep = new Sleep(sleepData);
   sleepStatMainUser.innerText = `sleep: ${sleep.hoursSleptOneUser(user.id, date)}, quality: ${sleep.sleepQualityOneUser(user.id, date)}`;
   userWeeklySleep.innerText = ` Hours slept this week: ${sleep.calculateWeeklySleepQuality(user.id, date)} `
-  userSleepAvg.innerText = ` Average Sleep Quality: ${Math.round(sleep.returnAveUserSleepQualityAllTime(user.id))}`
-
-  //hours of sleep & quality for latest day
-  // sleep data for week
-  //all time avg sleep quality
-  //all avg number of hours slept
-
+  userSleepAvg.innerText = ` Average Sleep Quality: ${Math.round(sleep.returnAveUserSleepQualityAllTime(user.id))}, Average Hours: ${sleep.aveUserHoursSleptAllTime(user.id)}`
 };
 
 
