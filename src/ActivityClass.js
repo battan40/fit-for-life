@@ -28,6 +28,13 @@ class Activity {
     return milesWalked
   }
 
+  stepsOnDate(userID, specificDate) {
+    const userStepData = this.findUserActivity(userID);
+    const StepDataOnDate = userStepData.find(day => day.date === specificDate)
+    console.log(StepDataOnDate.numSteps, '<<numsteps')
+    return StepDataOnDate.numSteps;
+  }
+
   minutesActiveOnDay(userID, specificDate) {
     const userStepData = this.findUserActivity(userID);
     const StepDataOnDate = userStepData.find(day => day.date === specificDate)
@@ -75,11 +82,6 @@ class Activity {
   }
 
 };
-
-
-
-
-
 
 if (typeof module !== 'undefined') {
   module.exports = Activity;
