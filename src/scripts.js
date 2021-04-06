@@ -11,7 +11,8 @@ const userWeeklyHydration = document.getElementById('userWeeklyHydration');
 const sleepStatMainUser = document.querySelector('#mainUserSleepStat');
 const userWeeklySleep = document.getElementById('userWeeklySleep');
 const userSleepAvg = document.getElementById('userSleepAvg');
-
+const userStepsDisplay = document.getElementById('userStepsDisplay');
+console.log(userStepsDisplay);
 
 window.addEventListener('load', onPageLoad);
 
@@ -22,6 +23,7 @@ function onPageLoad() {
   displayAllAverageSteps();
   displayUserAverageSteps();
   getMainUserSleep(currentUser, currentDate);
+  getMainUserActivity(currentUser, currentDate);
 };
 
 function getMainUser() {
@@ -47,6 +49,12 @@ function getMainUserSleep(user, date) {
   userSleepAvg.innerText = ` Average Sleep Quality: ${Math.round(sleep.returnAveUserSleepQualityAllTime(user.id))}, Average Hours: ${sleep.aveUserHoursSleptAllTime(user.id)}`
 };
 
+
+function getMainUserActivity(user, date) {
+  const activity = new Activity(activityData);
+  userStepsDisplay.innerText = `${activity.numSteps} Steps Today!`
+
+};
 
 function displayUserAverageSteps() {
   const userStepGoal = document.querySelector('#userStepGoal');
