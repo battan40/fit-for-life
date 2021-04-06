@@ -12,7 +12,6 @@ const sleepStatMainUser = document.querySelector('#mainUserSleepStat');
 const userWeeklySleep = document.getElementById('userWeeklySleep');
 const userSleepAvg = document.getElementById('userSleepAvg');
 const userStepsDisplay = document.getElementById('userStepsDisplay');
-console.log(userStepsDisplay);
 
 window.addEventListener('load', onPageLoad);
 
@@ -48,7 +47,6 @@ function getMainUserSleep(user, date) {
   userWeeklySleep.innerText = ` Hours slept this week: ${sleep.calculateWeeklySleepQuality(user.id, date)} `
   userSleepAvg.innerText = ` Average Sleep Quality: ${Math.round(sleep.returnAveUserSleepQualityAllTime(user.id))}, Average Hours: ${sleep.aveUserHoursSleptAllTime(user.id)}`
 };
-
 
 function getMainUserActivity(user, date) {
   const activity = new Activity(activityData);
