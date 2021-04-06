@@ -2,6 +2,8 @@ if (typeof require !== 'undefined') {
   var moment = require('../src/Moment');
 }
 
+const userData = require('../data/users.js');
+
 
 class Activity {
   constructor(activityData){
@@ -80,11 +82,6 @@ class Activity {
   }
 
 };
-
-
-
-
-
 
 if (typeof module !== 'undefined') {
   module.exports = Activity;
