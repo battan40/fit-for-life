@@ -43,13 +43,13 @@ describe ('Sleep', () => {
   });
 
   it('should return average single user average sleep for any weeks date range', () => {
-    expect(sleep.aveUserHoursSleptAllTime(1)).to.equal(6.871428571428572);
-    expect(sleep.aveUserHoursSleptAllTime(2)).to.equal(7.328571428571428);
+    expect(sleep.aveUserHoursSleptAllTime(1)).to.equal(6.9);
+    expect(sleep.aveUserHoursSleptAllTime(2)).to.equal(8.2);
   });
 
   it('should return average single user average sleep quality any date range', () => {
-    expect(sleep.returnAveUserSleepQualityAllTime(1)).to.equal(3.385714285714286);
-    expect(sleep.returnAveUserSleepQualityAllTime(2)).to.equal(2.5142857142857147);
+    expect(sleep.returnAveUserSleepQualityAllTime(1)).to.equal(3);
+    expect(sleep.returnAveUserSleepQualityAllTime(2)).to.equal(2);
   });
 
   it('should return a list of hours slept each day per any week', () => {
