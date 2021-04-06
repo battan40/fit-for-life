@@ -30,7 +30,7 @@ class Sleep {
     const allSleepQuality = userSleepData.reduce((startQuality, sleeper) => {
       return startQuality + sleeper.hoursSlept;
     }, 0);
-      return allSleepQuality / userSleepData.length;
+      return Math.round((allSleepQuality / userSleepData.length) * 10) / 10;
   };
 
   returnAveUserSleepQualityAllTime(oneId) {
@@ -38,7 +38,7 @@ class Sleep {
     const allSleepQuality = userSleepData.reduce((startQuality, sleeper) => {
       return startQuality + sleeper.sleepQuality;
     }, 0);
-      return allSleepQuality / userSleepData.length;
+      return Math.round((allSleepQuality / userSleepData.length) * 10 / 10);
   };
 
   calculateWeeksHoursSlept(id, endDate) {

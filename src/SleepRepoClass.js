@@ -22,7 +22,7 @@ class SleepRepo {
     if (!this.sleepData.includes(this.sleepData.userID)) {
       usersIdList.push(this.sleepData.userID);
     }
-    return sleepQualityValues / usersIdList.length;
+    return Math.round((sleepQualityValues / usersIdList.length) * 10) / 10;
   };
 
   locateQualitySleepers(weekSleepQuality) {
@@ -61,18 +61,11 @@ class SleepRepo {
     const sleepersByDate = this.sleepData.filter(sleepers => {
       return sleepers.date === date;
     });
-    const mostHoursSlept = sleepersByDate.reduce((user1, user2) => {
-      if (user1.hoursSlept > user2.hoursSlept) {
-        return user1;
-      } else if (user1.hoursSlept === user2.hoursSlept){
+    const mostHoursSlept = sleepersByDate.sort((user1, user2) => user2.hoursSlept - user1.hoursSlept);
+      return mostHoursSlept.filter(user => user.hoursSlept === mostHoursSlept[0].hoursSlept);
 
-        return user2, user1;
-      };
-    });
-      return mostHoursSlept;
   };
 };
-
 if (typeof module !== 'undefined') {
   module.exports = SleepRepo;
 };
