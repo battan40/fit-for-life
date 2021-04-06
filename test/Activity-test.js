@@ -39,6 +39,11 @@ describe ('Activity', () => {
    {userID: 1, date: '2019/06/23', numSteps: 13928, minutesActive: 218, flightsOfStairs: 21}]);
    });
 
+   it('should calculate miles walked on a single day for user', () => {
+     expect(activity.milesWalkedOnDay(user1, "2019/06/16")).to.equal( 5.4);
+     expect(activity.milesWalkedOnDay(user2, "2019/06/18")).to.equal(4);
+   });
+
 
   it('should find how many minutes user was active for on date', () => {
     expect(activity.minutesActiveOnDay(1, "2019/06/16")).to.equal(175);
