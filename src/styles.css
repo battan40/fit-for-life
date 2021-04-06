@@ -38,10 +38,13 @@
 
 .prog-rings {
   display: flex;
+  width: 100vh;
+  justify-content: space-between;
 }
 
 .user-stats {
   border: 2px #34E4C7 solid;
+  height: 30vh;
 }
 
 .sleep {
@@ -77,6 +80,7 @@
 
 .user-graph {
   border: 2px #34E4C7 solid;
+  width: 20vw;
 }
 
 @media only screen and (max-device-width: 812px) /*<<< swap this so desktop is at bottom */
