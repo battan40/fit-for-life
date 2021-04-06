@@ -2,8 +2,6 @@ const chai = require('chai');
 const expect = chai.expect;
 const User = require('../src/UserClass');
 const UserRepo = require('../src/UserRepoClass');
-
-
 const Hydration = require('../src/HydrationClass');
 const testHydrationData = require('../data/test-hydration-data.js');
 const testUserData = require('../data/test-user-data.js');
@@ -37,7 +35,7 @@ describe ('Hydration', () => {
     ]);
   });
 
-  it('should recall number of Fluid Ounces drank', () => {
+  it('should recall number of Fluid Ounces drank of single user', () => {
     expect(hydration.calculateHydrationAllTime(1)).to.equal(66.71428571428571);
     expect(hydration.calculateHydrationAllTime(2)).to.equal(68.14285714285714);
   });

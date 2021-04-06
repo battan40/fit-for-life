@@ -2,19 +2,19 @@
 class HydrationRepo {
   constructor(hydrationData){
     this.hydroData = hydrationData;
+  }
 
-  }
-  findHydrationDataById(data) {
-    let uniqueHydration = hydration.findUserById();
-    return uniqueHydration;
-  }
   returnAverageAllHydration() {
-  const allHydration = this.hydroData.reduce((totalOunces, user) => {
-    return totalOunces + user.numOunces;
- }, 0)
-    return allHydration / this.hydroData.length;
-}
- };
+    const allWaterDrank = [];
+    const allOunces= this.hydroData.reduce((totalOunces, user) => {
+    return totalOunces += user.numOunces;
+    }, 0);
+    if (!this.hydroData.includes(this.hydroData.userID)) {
+      allWaterDrank.push(this.hydroData.userID);
+    }
+    return allOunces / allWaterDrank.length;
+  }
+};
 
 if (typeof module !== 'undefined') {
   module.exports = HydrationRepo;
