@@ -9,6 +9,9 @@ const emailDisplay = document.getElementById('emailDisplay');
 const userHydrationDisplay = document.getElementById('userHydrationDisplay');
 const userWeeklyHydration = document.getElementById('userWeeklyHydration');
 const sleepStatMainUser = document.querySelector('#mainUserSleepStat');
+const userWeeklySleep = document.getElementById('userWeeklySleep');
+const userSleepAvg = document.getElementById('userSleepAvg');
+
 
 window.addEventListener('load', onPageLoad);
 
@@ -40,6 +43,9 @@ function getMainUserHydration(user, date) {
 function getMainUserSleep(user, date) {
   const sleep = new Sleep(sleepData);
   sleepStatMainUser.innerText = `sleep: ${sleep.hoursSleptOneUser(user.id, date)}, quality: ${sleep.sleepQualityOneUser(user.id, date)}`;
+  userWeeklySleep.innerText = ` Hours slept this week: ${sleep.calculateWeeklySleepQuality(user.id, date)} `
+  , 
+
   //hours of sleep & quality for latest day
   // sleep data for week
   //all time avg sleep quality
