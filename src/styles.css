@@ -3,7 +3,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: 2px black solid;
 }
 
 .main {
@@ -16,14 +15,12 @@
 
 /* ******** top container ******** */
 .top-container {
-  border: 2px #EF3B82 solid;
   display: flex;
   justify-content: center;
   flex-grow: 4;
 }
 
 .top-article {
-  border: 2px #FFE481 dotted;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +30,8 @@
 
 .title {
   margin-top: 3%;
-  padding: 5%;
+  padding: 2%;
+  font-size: 5em;
 }
 
 .prog-rings {
@@ -43,13 +41,11 @@
 }
 
 .user-stats {
-  border: 2px #34E4C7 solid;
   height: 30vh;
 }
 
 /* ******* friends container ******* */
 .friend-container {
-  border: 2px #EF3B82 solid;
   display: flex;
   justify-content: center;
   flex-grow: 1;
@@ -58,14 +54,13 @@
 
 /* ******* bottom container ******* */
 .bottom-container {
-  border: 2px #EF3B82 solid;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-grow: 2;
+  font-size: .65em;
 }
 
 .bottom-article {
-  border: 2px #FFE481 dotted;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -73,8 +68,13 @@
   flex-grow: inherit;
 }
 
+.box {
+  box-shadow:
+  0px 0px 2px 2px rgba(0, 0, 0, 0.5),
+  0px 0px 4px 4px rgba(0, 0, 0, 0.3)
+}
+
 .user-graph {
-  border: 2px #34E4C7 solid;
   width: 20vw;
 }
 

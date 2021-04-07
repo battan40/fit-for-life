@@ -2,6 +2,9 @@ if (typeof require !== 'undefined') {
   var moment = require('../src/Moment');
 }
 
+// const userData = require('../data/test-user-data.js');
+
+
 class Activity {
   constructor(activityData){
     this.activityData = activityData;
@@ -10,6 +13,7 @@ class Activity {
   findUserActivity(userID) {
     return this.activityData.filter(user =>  user.userID === userID)
   }
+
 
   milesWalkedOnDay(user, specificDate) {
      const userStepData = this.findUserActivity(user.id);
