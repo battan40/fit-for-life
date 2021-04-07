@@ -11,10 +11,10 @@ class UserRepo {
     const allUserSteps = this.data.reduce((totalSteps, user) => {
       return totalSteps + user.dailyStepGoal;
     }, 0);
-      return allUserSteps/this.data.length;
+    return allUserSteps / this.data.length;
   }
-};
+}
 
 if (typeof module !== 'undefined') {
   module.exports = UserRepo;
-};
+}
