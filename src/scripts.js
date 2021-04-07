@@ -1,19 +1,19 @@
-let currentUser;
 let currentDate = moment(new Date("2019/09/22")).format('YYYY/MM/DD');
+let currentUser;
 const allUsers = new UserRepo(userData);
 const displayUser = document.querySelector('#displayUser');
-const userStepGoal = document.querySelector('#stepGoal');
-const friendsContainer = document.querySelector('#friendContainer');
-const stridelength = document.getElementById('stridelength');
 const emailDisplay = document.getElementById('emailDisplay');
-const userHydrationDisplay = document.getElementById('userHydrationDisplay');
-const userWeeklyHydration = document.getElementById('userWeeklyHydration');
-const sleepStatMainUser = document.querySelector('#mainUserSleepStat');
-const userWeeklySleep = document.getElementById('userWeeklySleep');
-const userSleepAvg = document.getElementById('userSleepAvg');
-const userStepsDisplay = document.getElementById('userStepsDisplay');
-const minutesActive = document.getElementById('minutesActive');
+const friendsContainer = document.querySelector('#friendContainer');
 const milesWalked = document.getElementById('milesWalked');
+const minutesActive = document.getElementById('minutesActive');
+const stridelength = document.getElementById('stridelength');
+const sleepStatMainUser = document.querySelector('#mainUserSleepStat');
+const userHydrationDisplay = document.getElementById('userHydrationDisplay');
+const userSleepAvg = document.getElementById('userSleepAvg');
+const userStepGoal = document.querySelector('#stepGoal');
+const userStepsDisplay = document.getElementById('userStepsDisplay');
+const userWeeklyHydration = document.getElementById('userWeeklyHydration');
+const userWeeklySleep = document.getElementById('userWeeklySleep');
 
 window.addEventListener('load', onPageLoad);
 
