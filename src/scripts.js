@@ -54,8 +54,7 @@ function getMainUserActivity(user, date) {
   const activity = new Activity(activityData);
   userStepsDisplay.innerText = `${activity.stepsOnDate(user.id, date)} Steps Today!`
   minutesActive.innerText = `${activity.minutesActiveOnDay(user.id, date)} minutes active today!`
-  milesWalked.innerText = `${activity.milesWalkedOnDay(user.id, date)} miles walked today!`
-
+  milesWalked.innerText = `${activity.milesWalkedOnDay(user, date)} miles walked today!`
 };
 
 function displayUserAverageSteps() {
