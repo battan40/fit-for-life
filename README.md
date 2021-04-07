@@ -62,4 +62,4 @@
 
 ## Preview
 
-![A Glance Ahead]()
+![A Glance Ahead](https://media.giphy.com/media/mEvg9wL0dMJEXZiDUa/giphy.gif)
