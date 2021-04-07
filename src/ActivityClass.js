@@ -14,31 +14,26 @@ class Activity {
     return this.activityData.filter(user =>  user.userID === userID)
   }
 
-  findUserStride(userID) {
-    const userInfo = userData.find(user => user.id === userID)
-    const userStrideLength = userInfo.strideLength
-    return userStrideLength;
+
+  milesWalkedOnDay(user, specificDate) {
+     const userStepData = this.findUserActivity(user.id);
+     const stepDataOnDate = this.activityData.find(day => day.date === specificDate)
+     const strideToMile = 5280 / user.strideLength
+     return Math.round((stepDataOnDate.numSteps / strideToMile) * 10) / 10 ;
+
   }
 
- milesWalkedOnDay(userID, specificDate) {
-   const userStepData = this.findUserActivity(userID);
-   const StepDataOnDate = userStepData.find(day => day.date === specificDate)
-   const strideToMile = 5280 / this.findUserStride(userID)
-   return StepDataOnDate.numSteps / strideToMile;
+   stepsOnDate(userID, specificDate) {
+     const userStepData = this.findUserActivity(userID);
+     const stepDataOnDate = userStepData.find(day => day.date === specificDate)
+     return stepDataOnDate.numSteps;
   }
 
-
-  stepsOnDate(userID, specificDate) {
-    const userStepData = this.findUserActivity(userID);
-    const stepDataOnDate = userStepData.find(day => day.date === specificDate)
-    return stepDataOnDate.numSteps;
-  }
-
-  minutesActiveOnDay(userID, specificDate) {
-    const userStepData = this.findUserActivity(userID);
-    const stepDataOnDate = userStepData.find(day => day.date === specificDate)
-    const minutesActive = stepDataOnDate.minutesActive;
-    return minutesActive;
+   minutesActiveOnDay(userID, specificDate) {
+     const userStepData = this.findUserActivity(userID);
+     const stepDataOnDate = userStepData.find(day => day.date === specificDate)
+     const minutesActive = stepDataOnDate.minutesActive;
+     return minutesActive;
   }
 
   minutesActiveAverageOnWeek(userID, endDate) {
