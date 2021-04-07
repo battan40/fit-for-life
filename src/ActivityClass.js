@@ -11,7 +11,6 @@ class Activity {
     return this.activityData.filter(user =>  user.userID === userID)
   }
 
-
   milesWalkedOnDay(user, specificDate) {
     const stepDataOnDate = this.activityData.find(day => day.date === specificDate)
     const strideToMile = 5280 / user.strideLength
@@ -51,7 +50,6 @@ class Activity {
     return user.dailyStepGoal <= stepDataOnDate.numSteps;
   }
 
-
   exceededGoal(user) {
     const userStepData = this.findUserActivity(user.id);
     return userStepData.filter(date => date.numSteps > user.dailyStepGoal);
@@ -68,7 +66,6 @@ class Activity {
     })
     return `All time record is ${allTimeRecord.flightsOfStairs} flights of stairs, on ${allTimeRecord.date}!`;
   }
-
 }
 
 if (typeof module !== 'undefined') {
