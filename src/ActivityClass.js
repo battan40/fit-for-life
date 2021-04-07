@@ -2,6 +2,9 @@ if (typeof require !== 'undefined') {
   var moment = require('../src/Moment');
 }
 
+const userData = require('../data/test-user-data.js');
+
+
 class Activity {
   constructor(activityData){
     this.activityData = activityData;
@@ -11,12 +14,19 @@ class Activity {
     return this.activityData.filter(user =>  user.userID === userID)
   }
 
-  milesWalkedOnDay(user, specificDate) {
-     const userStepData = this.findUserActivity(user.id);
-     const stepDataOnDate = userStepData.find(day => day.date === specificDate)
-     const strideToMile = 5280 / user.strideLength
-     return Math.round((stepDataOnDate.numSteps / strideToMile) * 10) / 10 ;
-   }
+  findUserStride(userID) {
+   const userInfo = userData.find(user => user.id === userID)
+   const userStrideLength = userInfo.strideLength
+   return userStrideLength;
+ }
+
+ milesWalkedOnDay(userID, specificDate) {
+   const userStepData = this.findUserActivity(userID);
+   const StepDataOnDate = userStepData.find(day => day.date === specificDate)
+   const strideToMile = 5280 / this.findUserStride(userID)
+   return StepDataOnDate.numSteps / strideToMile;
+ }
+
 
    stepsOnDate(userID, specificDate) {
      const userStepData = this.findUserActivity(userID);
@@ -67,6 +77,8 @@ class Activity {
     })
     return `All time record is ${allTimeRecord.flightsOfStairs} flights of stairs, on ${allTimeRecord.date}!`;
   }
+
+
 
 };
 

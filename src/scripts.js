@@ -40,7 +40,7 @@ function getMainUserHydration(user, date) {
   const weekTotal = hydration.calculateWeeksHydration(user.id, date);
   const weekSum = weekTotal.reduce((paramA, paramB) => {return paramA + paramB;},0);
   userHydrationDisplay.innerText = ` hydration: ${hydration.singleDayHydration(user.id, date)} Oz Today!`;
-  userWeeklyHydration.innerText = ` Weeks water intake: ${weekSum} oz this week!`;
+  userWeeklyHydration.innerText = ` ${weekSum} oz of water this week!`;
 };
 
 function getMainUserSleep(user, date) {
@@ -54,13 +54,13 @@ function getMainUserActivity(user, date) {
   const activity = new Activity(activityData);
   userStepsDisplay.innerText = `${activity.stepsOnDate(user.id, date)} Steps Today!`
   minutesActive.innerText = `${activity.minutesActiveOnDay(user.id, date)} minutes active today!`
-  milesWalked.innerText = `${activity.milesWalkedOnDay(user.id, date)} miles walked today!`
+  milesWalked.innerText = `${Math.round(activity.milesWalkedOnDay(user.id, date) * 10) / 10} miles walked today!`
 
 };
 
 function displayUserAverageSteps() {
   const userStepGoal = document.querySelector('#userStepGoal');
-  userStepGoal.innerText = `${currentUser.name}'s Daily Step Average: ${currentUser.dailyStepGoal}`;
+  userStepGoal.innerText = ` Daily Step Average: ${currentUser.dailyStepGoal}`;
 };
 
 function getFriends() {
