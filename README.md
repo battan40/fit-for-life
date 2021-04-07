@@ -56,7 +56,7 @@
 * The privacy to protect a user that wanted to store more of their personal information on the app
 *We respectfully disagree with placing the users address on display on the app, the email is already a degree of security risk*
 * `CSS` stylings to enhance the user experience
-  * An interactive progress wheel and corresponding
+  * An interactive progress wheel and corresponding data 
 * Error handling that pops up with helpful hints when a user has run into commonly experienced issues
 * An Admin-View; This way trends from all the stats of all the users can be threaded for community or overall UX improvement
 
