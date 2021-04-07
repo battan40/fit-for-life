@@ -15,7 +15,6 @@ class Activity {
     const stepDataOnDate = this.activityData.find(day => day.date === specificDate)
     const strideToMile = 5280 / user.strideLength
     return Math.round((stepDataOnDate.numSteps / strideToMile) * 10) / 10;
-
   }
 
   stepsOnDate(userID, specificDate) {
