@@ -62,8 +62,8 @@ class SleepRepo {
       return sleepers.date === date;
     });
     const mostHoursSlept = sleepersByDate.sort((user1, user2) => user2.hoursSlept - user1.hoursSlept);
+    console.log(mostHoursSlept);
       return mostHoursSlept.filter(user => user.hoursSlept === mostHoursSlept[0].hoursSlept);
-
   };
 };
 if (typeof module !== 'undefined') {
