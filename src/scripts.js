@@ -60,13 +60,13 @@ function getMainUserActivity(user, date) {
 
 function displayUserAverageSteps() {
   const userStepGoal = document.querySelector('#userStepGoal');
-  userStepGoal.innerText = ` Daily Step Average: ${currentUser.dailyStepGoal}`;
+  userStepGoal.innerText = `Daily Step Average: ${currentUser.dailyStepGoal}`;
 };
 
 function getFriends() {
   currentUser.friends.forEach(friend => {
     const foundFriend = userData.find(person => friend === person.id);
-    let displayFriendData = `<article class="friend">
+    let displayFriendData = `<article class="friend box">
       <h3 class="friend-name">${foundFriend.name}'s</h3>
       <h3 class="friend-step-goal">${foundFriend.dailyStepGoal} daily steps</h3>
     </article>`
