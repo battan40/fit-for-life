@@ -15,31 +15,31 @@ class Activity {
   }
 
   findUserStride(userID) {
-   const userInfo = userData.find(user => user.id === userID)
-   const userStrideLength = userInfo.strideLength
-   return userStrideLength;
- }
+    const userInfo = userData.find(user => user.id === userID)
+    const userStrideLength = userInfo.strideLength
+    return userStrideLength;
+  }
 
  milesWalkedOnDay(userID, specificDate) {
    const userStepData = this.findUserActivity(userID);
    const StepDataOnDate = userStepData.find(day => day.date === specificDate)
    const strideToMile = 5280 / this.findUserStride(userID)
    return StepDataOnDate.numSteps / strideToMile;
- }
+  }
 
 
-   stepsOnDate(userID, specificDate) {
-     const userStepData = this.findUserActivity(userID);
-     const stepDataOnDate = userStepData.find(day => day.date === specificDate)
-     return stepDataOnDate.numSteps;
-   }
+  stepsOnDate(userID, specificDate) {
+    const userStepData = this.findUserActivity(userID);
+    const stepDataOnDate = userStepData.find(day => day.date === specificDate)
+    return stepDataOnDate.numSteps;
+  }
 
-   minutesActiveOnDay(userID, specificDate) {
-     const userStepData = this.findUserActivity(userID);
-     const stepDataOnDate = userStepData.find(day => day.date === specificDate)
-     const minutesActive = stepDataOnDate.minutesActive;
-     return minutesActive;
-   }
+  minutesActiveOnDay(userID, specificDate) {
+    const userStepData = this.findUserActivity(userID);
+    const stepDataOnDate = userStepData.find(day => day.date === specificDate)
+    const minutesActive = stepDataOnDate.minutesActive;
+    return minutesActive;
+  }
 
   minutesActiveAverageOnWeek(userID, endDate) {
     const userStepData = this.findUserActivity(userID);
@@ -64,7 +64,7 @@ class Activity {
   exceededGoal(user) {
     const userStepData = this.findUserActivity(user.id);
     return userStepData.filter(date => date.numSteps > user.dailyStepGoal);
-    }
+  }
 
   allTimeStairClimb(userID) {
     const userStepData = this.findUserActivity(userID);
@@ -77,8 +77,6 @@ class Activity {
     })
     return `All time record is ${allTimeRecord.flightsOfStairs} flights of stairs, on ${allTimeRecord.date}!`;
   }
-
-
 
 };
 
