@@ -34,7 +34,7 @@ describe ('Sleep Repo', () => {
   });
 
   it('should be able to return collated user info by id', () => {
-      expect(sleep.filterUserById(user.id)).to.deep.equal( [
+    expect(sleep.filterUserById(user.id)).to.deep.equal( [
       { userID: 1, date: '2019/06/15', hoursSlept: 6.1, sleepQuality: 2.2 },
       { userID: 1, date: '2019/06/16', hoursSlept: 7, sleepQuality: 4.7 },
       { userID: 1, date: '2019/06/17', hoursSlept: 10.8, sleepQuality: 4.7 },
@@ -45,7 +45,7 @@ describe ('Sleep Repo', () => {
   });
 
   it('should return the average sleep quality of all the users', () => {
-      expect(sleepRepo.returnAveAllUserSleepQuality()).to.equal(41.1);
+    expect(sleepRepo.returnAveAllUserSleepQuality()).to.equal(41.1);
   });
 
   it('should return users that had sleep quality rating of above 3', () => {
@@ -54,6 +54,6 @@ describe ('Sleep Repo', () => {
 
   it('should for a given day, by the date, find the users who slept the most number of hours, even if there is a tie', () => {
     expect(sleepRepo.bestSleepersByDate("2019/06/17")).to.deep.equal( [
-  {userID: 1, date: '2019/06/17', hoursSlept: 10.8, sleepQuality: 4.7}, {userID: 2, date: '2019/06/17', hoursSlept: 10.8, sleepQuality: 1.6} ])
+      {userID: 1, date: '2019/06/17', hoursSlept: 10.8, sleepQuality: 4.7}, {userID: 2, date: '2019/06/17', hoursSlept: 10.8, sleepQuality: 1.6} ])
   });
 });

@@ -32,6 +32,6 @@ describe ('User Repository', () => {
   });
 
   it('should return the average total steps of all the users', () => {
-   expect(userRepo.returnAllUsersStepGoal()).to.deep.equal(6400)
- });
+    expect(userRepo.returnAllUsersStepGoal()).to.deep.equal(6400)
+  });
 });
