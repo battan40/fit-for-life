@@ -106,4 +106,8 @@
     width: 50vh;
   }
 
+  .bottom-container {
+    display: block;
+    font-size: 1.2em;
+  }
 }
