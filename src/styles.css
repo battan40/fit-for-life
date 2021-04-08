@@ -85,5 +85,10 @@
     font-size: 1.15em;
   }
 
-  
+  html {
+    background-color: #242938;
+    width: 80vh;
+  }
+
+
 }
