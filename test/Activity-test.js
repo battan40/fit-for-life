@@ -36,12 +36,12 @@ describe ('Activity', () => {
       {userID: 1, date: '2019/06/21', numSteps: 6760, minutesActive: 135, flightsOfStairs: 6},
       {userID: 1, date: '2019/06/22', numSteps: 10289, minutesActive: 119, flightsOfStairs: 6},
       {userID: 1, date: '2019/06/23', numSteps: 13928, minutesActive: 218, flightsOfStairs: 21}]);
-    });
+  });
 
   it('should calculate miles walked on a single day for user', () => {
-     expect(activity.milesWalkedOnDay(user1, "2019/06/16")).to.equal( 5.4);
-     expect(activity.milesWalkedOnDay(user2, "2019/06/18")).to.equal(3.8);
-   });
+    expect(activity.milesWalkedOnDay(user1, "2019/06/16")).to.equal( 5.4);
+    expect(activity.milesWalkedOnDay(user2, "2019/06/18")).to.equal(3.8);
+  });
 
   it('should count user steps on specific day', () => {
     expect(activity.stepsOnDate(1, "2019/06/22")).to.equal(10289);
@@ -74,7 +74,7 @@ describe ('Activity', () => {
       {userID: 2, date: '2019/06/19', numSteps: 9858, minutesActive: 243, flightsOfStairs: 44},
       {userID: 2, date: '2019/06/20', numSteps: 8153, minutesActive: 74, flightsOfStairs: 10},
       {userID: 2, date: '2019/06/21', numSteps: 10225, minutesActive: 174, flightsOfStairs: 26}]);
-    });
+  });
 
   it('should recall user\'s all time stair climb record', () => {
     expect(activity.allTimeStairClimb(1)).to.equal(`All time record is 36 flights of stairs, on 2019/06/16!`);
