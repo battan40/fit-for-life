@@ -2,11 +2,8 @@ if (typeof require !== 'undefined') {
   var moment = require('../src/Moment');
 }
 
-// const userData = require('../data/test-user-data.js');
-
-
 class Activity {
-  constructor(activityData){
+  constructor(activityData) {
     this.activityData = activityData;
   }
 
@@ -14,26 +11,23 @@ class Activity {
     return this.activityData.filter(user =>  user.userID === userID)
   }
 
-
   milesWalkedOnDay(user, specificDate) {
-     const userStepData = this.findUserActivity(user.id);
-     const stepDataOnDate = this.activityData.find(day => day.date === specificDate)
-     const strideToMile = 5280 / user.strideLength
-     return Math.round((stepDataOnDate.numSteps / strideToMile) * 10) / 10 ;
-
+    const stepDataOnDate = this.activityData.find(day => day.date === specificDate)
+    const strideToMile = 5280 / user.strideLength
+    return Math.round((stepDataOnDate.numSteps / strideToMile) * 10) / 10;
   }
 
-   stepsOnDate(userID, specificDate) {
-     const userStepData = this.findUserActivity(userID);
-     const stepDataOnDate = userStepData.find(day => day.date === specificDate)
-     return stepDataOnDate.numSteps;
+  stepsOnDate(userID, specificDate) {
+    const userStepData = this.findUserActivity(userID);
+    const stepDataOnDate = userStepData.find(day => day.date === specificDate)
+    return stepDataOnDate.numSteps;
   }
 
-   minutesActiveOnDay(userID, specificDate) {
-     const userStepData = this.findUserActivity(userID);
-     const stepDataOnDate = userStepData.find(day => day.date === specificDate)
-     const minutesActive = stepDataOnDate.minutesActive;
-     return minutesActive;
+  minutesActiveOnDay(userID, specificDate) {
+    const userStepData = this.findUserActivity(userID);
+    const stepDataOnDate = userStepData.find(day => day.date === specificDate)
+    const minutesActive = stepDataOnDate.minutesActive;
+    return minutesActive;
   }
 
   minutesActiveAverageOnWeek(userID, endDate) {
@@ -43,9 +37,9 @@ class Activity {
       return week.date >= begDate && week.date <= endDate
     });
     const minutesActive = weekActive.reduce((timeActive, day) => {
-      timeActive =+ day.minutesActive;
+      timeActive = + day.minutesActive;
       return timeActive;
-    },0)
+    }, 0)
     return minutesActive / weekActive.length
   }
 
@@ -54,7 +48,6 @@ class Activity {
     const stepDataOnDate = userStepData.find(day => day.date === specificDate)
     return user.dailyStepGoal <= stepDataOnDate.numSteps;
   }
-
 
   exceededGoal(user) {
     const userStepData = this.findUserActivity(user.id);
@@ -72,9 +65,8 @@ class Activity {
     })
     return `All time record is ${allTimeRecord.flightsOfStairs} flights of stairs, on ${allTimeRecord.date}!`;
   }
-
-};
+}
 
 if (typeof module !== 'undefined') {
   module.exports = Activity;
-};
+}

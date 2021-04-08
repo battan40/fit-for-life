@@ -46,7 +46,7 @@ describe ('Hydration', () => {
   });
 
   it('should recall a weeks fluid oz drank', () => {
-  expect(hydration.calculateWeeksHydration(1, "2019/06/21")).to.deep.equal([ 37, 75, 47, 85, 42, 87, 94 ]);
+    expect(hydration.calculateWeeksHydration(1, "2019/06/21")).to.deep.equal([ 37, 75, 47, 85, 42, 87, 94 ]);
   });
 
 });

@@ -78,31 +78,36 @@
   width: 20vw;
 }
 
-@media only screen and (max-device-width: 812px) /*<<< swap this so desktop is at bottom */
+@media only screen and (max-device-width: 812px)
 {
 
   * {
     font-size: 1.15em;
   }
 
-  /* ******** top container ******** */
-
-  .top-article {
-    justify-content: space-around;
+  html {
+    background-color: #242938;
+    width: 80vh;
   }
 
-  .stats-container1 {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 25% 65%;
+  .top-container {
+    margin-right: 20%;
   }
 
-  /* ******* friend container ******* */
-  .friend-container {
-    flex-direction: column;
-
+  .top-article
+   {
+    font-size: .7em;
+    margin-left: 15%;
+    align-items: center;
   }
 
-  /* ******* bottom container ******* */
+  .prog-rings {
+    display: block;
+    width: 50vh;
+  }
 
+  .bottom-container {
+    display: block;
+    font-size: 1.2em;
+  }
 }

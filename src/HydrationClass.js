@@ -10,23 +10,23 @@ class Hydration {
 
   findUserById(userId) {
     return this.hydrationData.filter(user => {
-    return  user.userID === userId
+      return  user.userID === userId
     })
-  };
+  }
 
   calculateHydrationAllTime(userID) {
     const userHydrationData = this.findUserById(userID);
     const allOuncesDrank = userHydrationData.reduce((beginningOunces, drinker) => {
       return beginningOunces + drinker.numOunces;
     }, 0);
-      return allOuncesDrank / userHydrationData.length;
-  };
+    return allOuncesDrank / userHydrationData.length;
+  }
 
   singleDayHydration(userID, specificDate) {
     const userHydrationData = this.findUserById(userID);
     const date = userHydrationData.find(day => day.date === specificDate)
-      return date.numOunces;
-  };
+    return date.numOunces;
+  }
 
   calculateWeeksHydration(userID, endDate) {
     const userHydrationData = this.findUserById(userID);
@@ -35,9 +35,9 @@ class Hydration {
       return week.date >= begDate && week.date <= endDate
     });
     return weekHydration.map(weekOunces => weekOunces.numOunces);
-  };
-};
+  }
+}
 
 if (typeof module !== 'undefined') {
   module.exports = Hydration;
-};
+}
