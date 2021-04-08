@@ -94,6 +94,16 @@
     margin-right: 20%;
   }
 
-  
+  .top-article
+   {
+    font-size: .7em;
+    margin-left: 15%;
+    align-items: center;
+  }
+
+  .prog-rings {
+    display: block;
+    width: 50vh;
+  }
 
 }
